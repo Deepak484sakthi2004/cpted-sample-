@@ -53,6 +53,7 @@ export default function TipTapEditor({
   const uploadingRef = useRef(false);
 
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit.configure({ codeBlock: false }),
       CodeBlock,
