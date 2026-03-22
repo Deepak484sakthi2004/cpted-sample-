@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import PageBanner from "@/components/public/PageBanner";
-import SectionImage from "@/components/public/SectionImage";
 import { BookOpen, Target, Users, Award, Globe, Shield } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -30,42 +29,43 @@ export default function AboutPage() {
         </div>
       </PageBanner>
 
-      {/* Mission */}
-      <section className="py-16 px-4 bg-white">
+      {/* Mission — Type 3: frosted glass card over full-bleed image */}
+      <PageBanner
+        src="/images/about-mission.jpg"
+        overlayClass="bg-gradient-to-r from-gray-900/80 to-gray-900/25"
+        className="py-16 px-4"
+      >
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            {/* Frosted glass card — left */}
+            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Our Mission
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-200 mb-4">
                 CPTEDINDIA was established to bring proactive Crime Prevention
                 Through Environmental Design (CPTED) methodologies to
                 individuals, institutions, and government bodies across India.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-200 mb-4">
                 We believe safety should be designed in — not bolted on.
                 Technologies can be defeated; traditional security measures
                 are expensive and some are obsolete. A combination of CPTED
                 and security devices is the perfect answer to balance present
                 and future security risks.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-200">
                 From CPTED audits and risk frameworks to professional
                 certifications (CCA &amp; CCP), we provide end-to-end safety
                 solutions for every sector.
               </p>
             </div>
 
-            {/* Mission image — falls back to placeholder grid */}
-            <SectionImage
-              src="/images/about-mission.jpg"
-              alt="CPTEDINDIA mission — safe spaces by design"
-              aspect="aspect-[4/3]"
-            />
+            {/* Right side — image shows through the lighter overlay */}
+            <div />
           </div>
         </div>
-      </section>
+      </PageBanner>
 
       {/* Values */}
       <section className="py-16 px-4 bg-gray-50">

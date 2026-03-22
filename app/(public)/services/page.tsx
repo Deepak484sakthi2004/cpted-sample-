@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import PageBanner from "@/components/public/PageBanner";
-import SectionImage from "@/components/public/SectionImage";
 import {
   Shield,
   AlertTriangle,
@@ -109,117 +108,117 @@ export default function ServicesPage() {
         </div>
       </nav>
 
-      {/* ── CONSULTING: CPTED ── */}
-      <section id="cpted" className="py-16 px-4 bg-white scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
-              <Shield className="h-5 w-5 text-amber-600" />
+      {/* ── CONSULTING: CPTED ── Type 1: Dark overlay, white floating cards */}
+      <div id="cpted" className="scroll-mt-28">
+        <PageBanner
+          src="/images/service-cpted.jpg"
+          overlayClass="bg-gray-900/88"
+          className="py-16 px-4"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/20">
+                <Shield className="h-5 w-5 text-amber-400" />
+              </div>
+              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+                Consulting
+              </span>
             </div>
-            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
-              Consulting
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">CPTED</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">CPTED</h2>
 
-          {/* Section image */}
-          <SectionImage
-            src="/images/service-cpted.jpg"
-            alt="CPTED consulting — safe spaces by design"
-            aspect="aspect-[21/6]"
-            className="mb-10 w-full"
-          />
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-4 text-gray-600">
-              <p>
-                Technologies can be defeated and sometimes the effects are recorded at a larger scale.
-                Traditional security measures are expensive and some are obsolete in recent times.
-                To ensure maximum safe progress, a combination of measures is required at this hour.
-                <strong className="text-gray-800"> CPTED &amp; Security devices are the perfect answer</strong> to
-                balance now &amp; the future security risks.
-              </p>
-              <p>
-                Crime Prevention Through Environmental Design (CPTED) strategies engage the people, ensure
-                natural surveillance, inform territorial impacts, communicate ownership and the design elements
-                facilitate us to see people where they have to be seen.
-              </p>
-              <p>
-                CPTEDINDIA applies proactive methodologies and CPTED concepts to implement crime prevention
-                strategies. Involve us right from the building design/discussion stage to get a holistic
-                safety and security design.
-              </p>
-              <Link href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
-                  Connect for a Free Consultation
-                </Button>
-              </Link>
-            </div>
-
-            <div className="space-y-6">
-              {/* Who requires */}
-              <div className="bg-amber-50 rounded-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-4">Who Requires a CPTED Audit and Certification?</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Any space utilised by an individual or people — or where there is a presence of property and
-                  process — requires a CPTED Audit and Certification. In specific:
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-4 text-gray-200">
+                <p>
+                  Technologies can be defeated and sometimes the effects are recorded at a larger scale.
+                  Traditional security measures are expensive and some are obsolete in recent times.
+                  To ensure maximum safe progress, a combination of measures is required at this hour.
+                  <strong className="text-white"> CPTED &amp; Security devices are the perfect answer</strong> to
+                  balance now &amp; the future security risks.
                 </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-                  {whoRequires.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                      <ChevronRight className="h-3 w-3 text-amber-500 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p>
+                  Crime Prevention Through Environmental Design (CPTED) strategies engage the people, ensure
+                  natural surveillance, inform territorial impacts, communicate ownership and the design elements
+                  facilitate us to see people where they have to be seen.
+                </p>
+                <p>
+                  CPTEDINDIA applies proactive methodologies and CPTED concepts to implement crime prevention
+                  strategies. Involve us right from the building design/discussion stage to get a holistic
+                  safety and security design.
+                </p>
+                <Link href="/contact">
+                  <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                    Connect for a Free Consultation
+                  </Button>
+                </Link>
               </div>
 
-              {/* How we do it */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-4">How We Do It</h3>
-                <ol className="space-y-2 text-sm text-gray-600 list-none">
-                  {[
-                    "Engage in dialogue to understand the client requirement",
-                    "Conduct a structured, comprehensive on-site assessment",
-                    "Provide raw data to clients to understand on-ground realities",
-                    "Execute pre and post surveys to measure progress",
-                    "Present findings of assessments, surveys, and data modelling",
-                    "Advocate evidence-based suggestions for effective change",
-                  ].map((step, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold flex-shrink-0 mt-0.5">
-                        {i + 1}
-                      </span>
-                      {step}
-                    </li>
-                  ))}
-                </ol>
-                <p className="text-sm text-gray-600 mt-4">
-                  Based on the final findings, CPTEDINDIA will advocate suggestions for effective change and
-                  progress in cost, manpower, infrastructure, and business engagements.
-                </p>
+              <div className="space-y-6">
+                {/* Who requires */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                  <h3 className="font-bold text-white mb-4">Who Requires a CPTED Audit and Certification?</h3>
+                  <p className="text-sm text-gray-300 mb-4">
+                    Any space utilised by an individual or people — or where there is a presence of property and
+                    process — requires a CPTED Audit and Certification. In specific:
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+                    {whoRequires.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-gray-200">
+                        <ChevronRight className="h-3 w-3 text-amber-400 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* How we do it */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                  <h3 className="font-bold text-white mb-4">How We Do It</h3>
+                  <ol className="space-y-2 text-sm text-gray-200 list-none">
+                    {[
+                      "Engage in dialogue to understand the client requirement",
+                      "Conduct a structured, comprehensive on-site assessment",
+                      "Provide raw data to clients to understand on-ground realities",
+                      "Execute pre and post surveys to measure progress",
+                      "Present findings of assessments, surveys, and data modelling",
+                      "Advocate evidence-based suggestions for effective change",
+                    ].map((step, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                          {i + 1}
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="text-sm text-gray-300 mt-4">
+                    Based on the final findings, CPTEDINDIA will advocate suggestions for effective change and
+                    progress in cost, manpower, infrastructure, and business engagements.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </PageBanner>
+      </div>
 
-      <hr className="border-gray-100" />
-
-      {/* ── CONSULTING: RISK MANAGEMENT ── */}
-      <section id="risk" className="py-16 px-4 bg-gray-50 scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100">
-              <AlertTriangle className="h-5 w-5 text-orange-600" />
+      {/* ── CONSULTING: RISK MANAGEMENT ── Type 2: Full-bleed, lighter overlay */}
+      <div id="risk" className="scroll-mt-28">
+        <PageBanner
+          src="/images/service-risk.jpg"
+          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          className="py-16 px-4"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+                <AlertTriangle className="h-5 w-5 text-orange-400" />
+              </div>
+              <span className="text-sm font-semibold text-orange-400 uppercase tracking-wide">
+                Consulting
+              </span>
             </div>
-            <span className="text-sm font-semibold text-orange-600 uppercase tracking-wide">
-              Consulting
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Risk Management</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-4 text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-8">Risk Management</h2>
+            <div className="max-w-2xl space-y-4 text-gray-200">
               <p>
                 CPTEDINDIA will progress with a structured way of managing possible activities that could cause
                 harm. Every sector is unique with their credentials and risk appetite — and so are the challenges.
@@ -234,36 +233,28 @@ export default function ServicesPage() {
                 </Button>
               </Link>
             </div>
-            <SectionImage
-              src="/images/service-risk.jpg"
-              alt="Risk management consulting"
-              aspect="aspect-[4/3]"
-            />
           </div>
-        </div>
-      </section>
+        </PageBanner>
+      </div>
 
-      <hr className="border-gray-100" />
-
-      {/* ── CONSULTING: SECURITY PROJECTS ── */}
-      <section id="security" className="py-16 px-4 bg-white scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
-              <Lock className="h-5 w-5 text-amber-600" />
+      {/* ── CONSULTING: SECURITY PROJECTS ── Type 2: Full-bleed */}
+      <div id="security" className="scroll-mt-28">
+        <PageBanner
+          src="/images/service-security.jpg"
+          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          className="py-16 px-4"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+                <Lock className="h-5 w-5 text-amber-400" />
+              </div>
+              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+                Consulting
+              </span>
             </div>
-            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
-              Consulting
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Security Projects</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <SectionImage
-              src="/images/service-security.jpg"
-              alt="Security project consulting"
-              aspect="aspect-[4/3]"
-            />
-            <div className="space-y-4 text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-8">Security Projects</h2>
+            <div className="max-w-2xl space-y-4 text-gray-200">
               <p>
                 CPTEDINDIA provides end-to-end advisory for security projects — from initial planning and
                 design through to implementation and review. We work with organisations to ensure security
@@ -276,25 +267,27 @@ export default function ServicesPage() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </PageBanner>
+      </div>
 
-      <hr className="border-gray-100" />
-
-      {/* ── CONSULTING: EXPATRIATE ── */}
-      <section id="expatriate" className="py-16 px-4 bg-gray-50 scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
-              <Globe className="h-5 w-5 text-green-700" />
+      {/* ── CONSULTING: EXPATRIATE ── Type 2: Full-bleed */}
+      <div id="expatriate" className="scroll-mt-28">
+        <PageBanner
+          src="/images/service-expatriate.jpg"
+          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          className="py-16 px-4"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+                <Globe className="h-5 w-5 text-green-400" />
+              </div>
+              <span className="text-sm font-semibold text-green-400 uppercase tracking-wide">
+                Consulting
+              </span>
             </div>
-            <span className="text-sm font-semibold text-green-700 uppercase tracking-wide">
-              Consulting
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Expatriate Services</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-4 text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-8">Expatriate Services</h2>
+            <div className="max-w-2xl space-y-4 text-gray-200">
               <p>
                 CPTEDINDIA offers dedicated safety and security advisory for expatriates and international
                 organisations operating in India. We help navigate local security landscapes, assess risk
@@ -306,207 +299,207 @@ export default function ServicesPage() {
                 </Button>
               </Link>
             </div>
-            <SectionImage
-              src="/images/service-expatriate.jpg"
-              alt="Expatriate safety services"
-              aspect="aspect-[4/3]"
-            />
           </div>
-        </div>
-      </section>
+        </PageBanner>
+      </div>
 
-      <hr className="border-gray-100" />
-
-      {/* ── TRAINING: CPTED ── */}
-      <section id="training" className="py-16 px-4 bg-white scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
-              <BookOpen className="h-5 w-5 text-amber-600" />
-            </div>
-            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
-              Training
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">CPTED Certification Training</h2>
-
-          {/* Training section image */}
-          <SectionImage
-            src="/images/training-cpted.jpg"
-            alt="CPTED certification training"
-            aspect="aspect-[21/6]"
-            className="mb-10 w-full"
-          />
-
-          {/* Overview */}
-          <div className="max-w-3xl space-y-4 text-gray-600 mb-12">
-            <p>
-              Professional certifications are a medium to convey expertise and industry knowledge that would
-              boost business and attract customers in the respective domain. Industry-relevant certifications
-              aid in revenue generation and gain a competitive edge over market competitors and leaders.
-            </p>
-            <p>
-              A <strong className="text-gray-800">CPTEDINDIA certification</strong> provides you with
-              Professional credibility, Respect among peers, Subject matter expertise, and increased
-              visibility with personal branding.
-            </p>
-            <p className="font-medium text-gray-800">
-              Customised Training Modules to fit your Needs.
-            </p>
-            <p>
-              We will discuss with you the specific needs required for your company/organisation. With the
-              outcome of the discussion, we will provide a tailor-made training solution that will address
-              the need and add value for the organisation.
-            </p>
-          </div>
-
-          {/* Who Should Attend */}
-          <div className="bg-amber-50 rounded-xl p-6 mb-12 max-w-3xl">
-            <div className="flex items-center gap-3 mb-3">
-              <Users className="h-5 w-5 text-amber-600" />
-              <h3 className="font-bold text-gray-900">Who Should Attend</h3>
-            </div>
-            <p className="text-sm text-gray-600">
-              Any individual or organisation who qualifies the criteria and is determined to prevent crime,
-              learn environmental design, create value, or seek CPTED knowledge can attend the training.
-            </p>
-          </div>
-
-          {/* Certification note */}
-          <div className="bg-green-50 rounded-xl p-6 mb-12 max-w-3xl">
-            <div className="flex items-center gap-3 mb-3">
-              <Award className="h-5 w-5 text-green-700" />
-              <h3 className="font-bold text-gray-900">Certification</h3>
-            </div>
-            <p className="text-sm text-gray-600">
-              The coveted CPTED Training Certificate will be provided on successful completion of the training.
-            </p>
-          </div>
-
-          {/* 3 Course Tiers */}
-          <div className="grid md:grid-cols-3 gap-8">
-
-            {/* Tier 1 — Generic One-Day */}
-            <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
-              <div className="mb-4">
-                <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                  Entry Level
-                </span>
-                <h3 className="text-xl font-bold text-gray-900">Generic One-Day Training Module</h3>
+      {/* ── TRAINING: CPTED ── Type 1 intro + clean white cards below */}
+      <div id="training" className="scroll-mt-28">
+        {/* Training intro with background image */}
+        <PageBanner
+          src="/images/training-cpted.jpg"
+          overlayClass="bg-gray-900/88"
+          className="py-16 px-4"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/20">
+                <BookOpen className="h-5 w-5 text-amber-400" />
               </div>
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
-                <p className="text-sm text-gray-500">
-                  Open to all. English knowledge to read, write, and speak is preferred.
+              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+                Training
+              </span>
+            </div>
+            <h2 className="text-3xl font-bold text-white mb-8">CPTED Certification Training</h2>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-4 text-gray-200">
+                <p>
+                  Professional certifications are a medium to convey expertise and industry knowledge that would
+                  boost business and attract customers in the respective domain. Industry-relevant certifications
+                  aid in revenue generation and gain a competitive edge over market competitors and leaders.
+                </p>
+                <p>
+                  A <strong className="text-white">CPTEDINDIA certification</strong> provides you with
+                  Professional credibility, Respect among peers, Subject matter expertise, and increased
+                  visibility with personal branding.
+                </p>
+                <p className="font-medium text-white">
+                  Customised Training Modules to fit your Needs.
+                </p>
+                <p>
+                  We will discuss with you the specific needs required for your company/organisation. With the
+                  outcome of the discussion, we will provide a tailor-made training solution that will address
+                  the need and add value for the organisation.
                 </p>
               </div>
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-700 mb-2">Module Topics</p>
-                <ul className="space-y-1">
-                  {genericModuleTopics.map((topic) => (
-                    <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link href="/contact" className="mt-6">
-                <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
-                  Enquire
-                </Button>
-              </Link>
-            </div>
 
-            {/* Tier 2 — CCA */}
-            <div className="bg-white rounded-xl border-2 border-amber-500 p-6 flex flex-col relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  CCA
-                </span>
-              </div>
-              <div className="mb-4">
-                <span className="inline-block bg-amber-50 text-amber-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                  For Beginners
-                </span>
-                <h3 className="text-xl font-bold text-gray-900">
-                  CPTEDINDIA Certified CPTED Associate
-                </h3>
-              </div>
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
-                <p className="text-sm text-gray-500">
-                  Minimum one year of experience in Crime, Risk, Safety, Security, Facilities, or Environment
-                  related areas. Veterans and students (studying Criminology, Architecture, or Law) are
-                  exempted. English proficiency required.
-                </p>
-              </div>
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-700 mb-2">All Generic Module Topics, plus:</p>
-                <ul className="space-y-1">
-                  {ccaAdditional.map((topic) => (
-                    <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-gray-500 mt-4 italic">
-                  Course Test &amp; Evaluation — examination at the end of the course to demonstrate knowledge
-                  and understanding over all course modules.
-                </p>
-              </div>
-              <Link href="/courses" className="mt-6">
-                <Button className="w-full bg-amber-500 hover:bg-amber-400 text-white font-bold">
-                  View Course
-                </Button>
-              </Link>
-            </div>
+              <div className="space-y-4">
+                {/* Who Should Attend */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Users className="h-5 w-5 text-amber-400" />
+                    <h3 className="font-bold text-white">Who Should Attend</h3>
+                  </div>
+                  <p className="text-sm text-gray-300">
+                    Any individual or organisation who qualifies the criteria and is determined to prevent crime,
+                    learn environmental design, create value, or seek CPTED knowledge can attend the training.
+                  </p>
+                </div>
 
-            {/* Tier 3 — CCP */}
-            <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
-              <div className="mb-4">
-                <span className="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                  For Professionals — CCP
-                </span>
-                <h3 className="text-xl font-bold text-gray-900">
-                  CPTEDINDIA Certified CPTED Professional
-                </h3>
+                {/* Certification note */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Award className="h-5 w-5 text-amber-400" />
+                    <h3 className="font-bold text-white">Certification</h3>
+                  </div>
+                  <p className="text-sm text-gray-300">
+                    The coveted CPTED Training Certificate will be provided on successful completion of the training.
+                  </p>
+                </div>
               </div>
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
-                <p className="text-sm text-gray-500">
-                  Minimum three years&apos; experience in Crime, Risk, Safety, Security, Facilities, or Environment
-                  related studies. Veterans and students (studying Criminology, Architecture, or Law) are
-                  exempted. English proficiency required.
-                </p>
-              </div>
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-700 mb-2">
-                  All Generic + CCA Module Topics, plus:
-                </p>
-                <ul className="space-y-1">
-                  {ccpAdditional.map((topic) => (
-                    <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-indigo-500 flex-shrink-0 mt-0.5" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-gray-500 mt-4 italic">
-                  Course Test &amp; Evaluation — examination at the end of the course to demonstrate knowledge
-                  and understanding over all course modules.
-                </p>
-              </div>
-              <Link href="/courses" className="mt-6">
-                <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
-                  View Course
-                </Button>
-              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </PageBanner>
+
+        {/* Course tier cards — clean white section */}
+        <section className="py-16 px-4 bg-white">
+          <div className="mx-auto max-w-6xl">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-10">Choose Your Certification Path</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+
+              {/* Tier 1 — Generic One-Day */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
+                <div className="mb-4">
+                  <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Entry Level
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900">Generic One-Day Training Module</h3>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
+                  <p className="text-sm text-gray-500">
+                    Open to all. English knowledge to read, write, and speak is preferred.
+                  </p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-700 mb-2">Module Topics</p>
+                  <ul className="space-y-1">
+                    {genericModuleTopics.map((topic) => (
+                      <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
+                        <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link href="/contact" className="mt-6">
+                  <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
+                    Enquire
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Tier 2 — CCA */}
+              <div className="bg-white rounded-xl border-2 border-amber-500 p-6 flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    CCA
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <span className="inline-block bg-amber-50 text-amber-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    For Beginners
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    CPTEDINDIA Certified CPTED Associate
+                  </h3>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
+                  <p className="text-sm text-gray-500">
+                    Minimum one year of experience in Crime, Risk, Safety, Security, Facilities, or Environment
+                    related areas. Veterans and students (studying Criminology, Architecture, or Law) are
+                    exempted. English proficiency required.
+                  </p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-700 mb-2">All Generic Module Topics, plus:</p>
+                  <ul className="space-y-1">
+                    {ccaAdditional.map((topic) => (
+                      <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
+                        <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-gray-500 mt-4 italic">
+                    Course Test &amp; Evaluation — examination at the end of the course to demonstrate knowledge
+                    and understanding over all course modules.
+                  </p>
+                </div>
+                <Link href="/courses" className="mt-6">
+                  <Button className="w-full bg-amber-500 hover:bg-amber-400 text-white font-bold">
+                    View Course
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Tier 3 — CCP */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
+                <div className="mb-4">
+                  <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    For Professionals — CCP
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    CPTEDINDIA Certified CPTED Professional
+                  </h3>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
+                  <p className="text-sm text-gray-500">
+                    Minimum three years&apos; experience in Crime, Risk, Safety, Security, Facilities, or Environment
+                    related studies. Veterans and students (studying Criminology, Architecture, or Law) are
+                    exempted. English proficiency required.
+                  </p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-700 mb-2">
+                    All Generic + CCA Module Topics, plus:
+                  </p>
+                  <ul className="space-y-1">
+                    {ccpAdditional.map((topic) => (
+                      <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
+                        <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-gray-500 mt-4 italic">
+                    Course Test &amp; Evaluation — examination at the end of the course to demonstrate knowledge
+                    and understanding over all course modules.
+                  </p>
+                </div>
+                <Link href="/courses" className="mt-6">
+                  <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
+                    View Course
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* CTA */}
       <section className="py-16 px-4 bg-gray-900 text-white text-center">

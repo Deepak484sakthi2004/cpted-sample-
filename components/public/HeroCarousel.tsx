@@ -81,7 +81,7 @@ export default function HeroCarousel() {
   const onPointerDown = (e: React.PointerEvent<HTMLElement>) => {
     dragStartX.current = e.clientX;
     isDragging.current = false;
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    // Do NOT call setPointerCapture — it prevents click events reaching child Links
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLElement>) => {
@@ -100,6 +100,7 @@ export default function HeroCarousel() {
       resetAutoPlay();
     }
     dragStartX.current = null;
+    isDragging.current = false; // always reset so subsequent clicks are never blocked
   };
 
   const handleArrowClick = (fn: () => void) => {
