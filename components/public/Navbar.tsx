@@ -25,6 +25,7 @@ export default function Navbar() {
             <Link href="/" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Home</Link>
             <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">About</Link>
             <Link href="/courses" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Courses</Link>
+            <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Services</Link>
             <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Contact</Link>
           </nav>
 
@@ -34,7 +35,7 @@ export default function Navbar() {
               <Button variant="outline" size="sm">Log In</Button>
             </Link>
             <Link href="/auth/signup">
-              <Button size="sm" className="bg-blue-700 hover:bg-blue-800">Sign Up</Button>
+              <Button size="sm" className="bg-amber-500 hover:bg-amber-400 text-white font-semibold">Sign Up</Button>
             </Link>
           </div>
 
@@ -55,13 +56,14 @@ export default function Navbar() {
               <Link href="/" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Home</Link>
               <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>About</Link>
               <Link href="/courses" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Courses</Link>
+              <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Services</Link>
               <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Contact</Link>
               <div className="flex gap-3 pt-2 border-t border-gray-200">
                 <Link href="/auth/login" onClick={() => setMenuOpen(false)}>
                   <Button variant="outline" size="sm" className="w-full">Log In</Button>
                 </Link>
                 <Link href="/auth/signup" onClick={() => setMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-blue-700 hover:bg-blue-800">Sign Up</Button>
+                  <Button size="sm" className="w-full bg-amber-500 hover:bg-amber-400 text-white font-semibold">Sign Up</Button>
                 </Link>
               </div>
             </nav>

@@ -50,7 +50,7 @@ export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 px-4">
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 px-4">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Explore Our Courses</h1>
           <p className="text-blue-100">Find the perfect course to advance your skills and career.</p>
@@ -76,7 +76,7 @@ export default function CoursesPage() {
                 size="sm"
                 variant={level === l ? "default" : "outline"}
                 onClick={() => setLevel(l)}
-                className={level === l ? "bg-blue-700 hover:bg-blue-800" : ""}
+                className={level === l ? "bg-amber-500 hover:bg-amber-400 text-white font-semibold border-amber-500" : ""}
               >
                 {l === "ALL" ? "All Levels" : l.charAt(0) + l.slice(1).toLowerCase()}
               </Button>

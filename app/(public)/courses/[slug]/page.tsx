@@ -38,7 +38,7 @@ export default async function CourseDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -46,8 +46,8 @@ export default async function CourseDetailPage({ params }: Props) {
                 {course.level.charAt(0) + course.level.slice(1).toLowerCase()}
               </Badge>
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{course.title}</h1>
-              <p className="text-blue-100 mb-6">{course.shortDescription}</p>
-              <div className="flex items-center gap-4 text-sm text-blue-200 mb-6">
+              <p className="text-gray-300 mb-6">{course.shortDescription}</p>
+              <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
                 {course.estimatedDuration && (
                   <span className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
@@ -64,7 +64,7 @@ export default async function CourseDetailPage({ params }: Props) {
                   {course.price === 0 ? "Free" : formatCurrency(course.price)}
                 </span>
                 <Link href="/auth/signup">
-                  <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-50 font-semibold">
+                  <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-lg">
                     Get Access — Sign Up
                   </Button>
                 </Link>
@@ -133,7 +133,7 @@ export default async function CourseDetailPage({ params }: Props) {
                 {course.price === 0 ? "Free" : formatCurrency(course.price)}
               </p>
               <Link href="/auth/signup" className="block">
-                <Button className="w-full bg-blue-700 hover:bg-blue-800 mb-3">
+                <Button className="w-full bg-amber-500 hover:bg-amber-400 text-white font-bold mb-3">
                   Get Access — Sign Up
                 </Button>
               </Link>
@@ -154,11 +154,11 @@ export default async function CourseDetailPage({ params }: Props) {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 bg-blue-50 border border-blue-100 rounded-xl p-8 text-center">
+        <div className="mt-12 bg-amber-50 border border-amber-100 rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to get started?</h3>
           <p className="text-gray-600 mb-6">Create a free account and wait for your instructor to grant you access.</p>
           <Link href="/auth/signup">
-            <Button size="lg" className="bg-blue-700 hover:bg-blue-800 font-semibold px-10">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-10 shadow-lg">
               Sign Up for Free
             </Button>
           </Link>

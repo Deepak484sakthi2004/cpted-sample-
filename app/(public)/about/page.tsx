@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About CPTEDINDIA</h1>
           <p className="text-xl text-blue-100">
@@ -80,12 +80,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-blue-800 text-white text-center">
+      <section className="py-16 px-4 bg-gray-900 text-white text-center">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold mb-4">Start Your Learning Journey</h2>
           <p className="text-blue-100 mb-8">Browse our full catalogue of courses and find the one that takes your career to the next level.</p>
           <Link href="/courses">
-            <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-50 font-semibold px-8">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg">
               Browse Courses
             </Button>
           </Link>

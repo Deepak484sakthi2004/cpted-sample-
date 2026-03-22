@@ -35,7 +35,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 px-4 text-center">
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 px-4 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact Us</h1>
         <p className="text-blue-100">Have a question? We'd love to hear from you.</p>
       </div>
@@ -47,9 +47,9 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "support@cptedindia.com" },
+                { icon: Mail, label: "Email", value: "vasanthram227@gmail.com" },
                 { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-                { icon: MapPin, label: "Location", value: "New Delhi, India" },
+                { icon: MapPin, label: "Location", value: "India" },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 flex-shrink-0">
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   <Label htmlFor="message">Message *</Label>
                   <Textarea id="message" placeholder="Tell us more..." rows={5} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required className="mt-1 resize-none" />
                 </div>
-                <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800" disabled={loading}>
+                <Button type="submit" className="w-full bg-amber-500 hover:bg-amber-400 text-white font-bold" disabled={loading}>
                   {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
