@@ -111,7 +111,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-[560px] flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
+      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-[560px] flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

@@ -7,6 +7,7 @@ import TipTapContent from "@/components/TipTapContent";
 import { getCourseBySlug } from "@/lib/actions/courses";
 import { formatCurrency, getLevelColor } from "@/lib/utils";
 import { Clock, ChevronDown, BookOpen, FileQuestion } from "lucide-react";
+import PageBanner from "@/components/public/PageBanner";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -38,7 +39,7 @@ export default async function CourseDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+      <PageBanner src={course.thumbnail ?? "/images/courses-hero.jpg"} className="text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -77,7 +78,7 @@ export default async function CourseDetailPage({ params }: Props) {
             )}
           </div>
         </div>
-      </div>
+      </PageBanner>
 
       <div className="mx-auto max-w-5xl px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8">
@@ -114,7 +115,7 @@ export default async function CourseDetailPage({ params }: Props) {
                         </div>
                       ))}
                       {module.quiz && (
-                        <div className="flex items-center gap-2 py-1.5 text-sm text-blue-600">
+                        <div className="flex items-center gap-2 py-1.5 text-sm text-amber-600">
                           <FileQuestion className="h-3.5 w-3.5 flex-shrink-0" />
                           Module Quiz included
                         </div>

@@ -82,10 +82,10 @@ export default function SignupPage() {
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-700">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900">
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-blue-800">CPTEDINDIA</span>
+              <span className="text-2xl font-bold text-gray-900">CPTEDINDIA</span>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export default function SignupPage() {
                   className={`pr-8 ${usernameStatus === "taken" ? "border-red-400 focus:ring-red-400" : usernameStatus === "available" ? "border-green-400 focus:ring-green-400" : ""}`}
                 />
                 <div className="absolute right-2 top-1/2 -translate-y-1/2">
-                  {usernameStatus === "checking" && <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />}
+                  {usernameStatus === "checking" && <div className="h-4 w-4 animate-spin rounded-full border-2 border-amber-500 border-t-transparent" />}
                   {usernameStatus === "available" && <CheckCircle className="h-4 w-4 text-green-500" />}
                   {usernameStatus === "taken" && <XCircle className="h-4 w-4 text-red-500" />}
                 </div>
@@ -184,7 +184,7 @@ export default function SignupPage() {
 
           <p className="mt-6 text-center text-sm text-gray-500">
             Already have an account?{" "}
-            <Link href="/auth/login" className="text-blue-700 font-medium hover:underline">
+            <Link href="/auth/login" className="text-amber-600 font-medium hover:underline">
               Log in
             </Link>
           </p>

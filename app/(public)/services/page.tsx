@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import PageBanner from "@/components/public/PageBanner";
+import SectionImage from "@/components/public/SectionImage";
 import {
   Shield,
   AlertTriangle,
@@ -73,14 +75,16 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16 px-4 text-center">
+      <PageBanner src="/images/services-hero.jpg" className="py-16 px-4 text-center">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-blue-100 text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Our <span className="text-amber-400">Services</span>
+          </h1>
+          <p className="text-white/80 text-lg">
             Proactive safety and security solutions — from environmental design to professional certification.
           </p>
         </div>
-      </section>
+      </PageBanner>
 
       {/* Quick Nav */}
       <nav className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
@@ -96,7 +100,7 @@ export default function ServicesPage() {
               <a
                 key={label}
                 href={href}
-                className="text-gray-600 hover:text-blue-700 transition-colors flex-shrink-0"
+                className="text-gray-600 hover:text-amber-600 transition-colors flex-shrink-0"
               >
                 {label}
               </a>
@@ -109,14 +113,22 @@ export default function ServicesPage() {
       <section id="cpted" className="py-16 px-4 bg-white scroll-mt-28">
         <div className="mx-auto max-w-6xl">
           <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-              <Shield className="h-5 w-5 text-blue-700" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
+              <Shield className="h-5 w-5 text-amber-600" />
             </div>
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">
+            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
               Consulting
             </span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-6">CPTED</h2>
+
+          {/* Section image */}
+          <SectionImage
+            src="/images/service-cpted.jpg"
+            alt="CPTED consulting — safe spaces by design"
+            aspect="aspect-[21/6]"
+            className="mb-10 w-full"
+          />
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-4 text-gray-600">
@@ -146,7 +158,7 @@ export default function ServicesPage() {
 
             <div className="space-y-6">
               {/* Who requires */}
-              <div className="bg-blue-50 rounded-xl p-6">
+              <div className="bg-amber-50 rounded-xl p-6">
                 <h3 className="font-bold text-gray-900 mb-4">Who Requires a CPTED Audit and Certification?</h3>
                 <p className="text-sm text-gray-600 mb-4">
                   Any space utilised by an individual or people — or where there is a presence of property and
@@ -155,7 +167,7 @@ export default function ServicesPage() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                   {whoRequires.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                      <ChevronRight className="h-3 w-3 text-blue-500 flex-shrink-0" />
+                      <ChevronRight className="h-3 w-3 text-amber-500 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -205,21 +217,28 @@ export default function ServicesPage() {
               Consulting
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Risk Management</h2>
-          <div className="max-w-3xl space-y-4 text-gray-600">
-            <p>
-              CPTEDINDIA will progress with a structured way of managing possible activities that could cause
-              harm. Every sector is unique with their credentials and risk appetite — and so are the challenges.
-            </p>
-            <p>
-              Contact us to address challenges in your organisation and experience peace of mind. Our experts
-              can guide you to form an effective risk management framework for your firm.
-            </p>
-            <Link href="/contact">
-              <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
-                Talk to Our Experts
-              </Button>
-            </Link>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Risk Management</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4 text-gray-600">
+              <p>
+                CPTEDINDIA will progress with a structured way of managing possible activities that could cause
+                harm. Every sector is unique with their credentials and risk appetite — and so are the challenges.
+              </p>
+              <p>
+                Contact us to address challenges in your organisation and experience peace of mind. Our experts
+                can guide you to form an effective risk management framework for your firm.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                  Talk to Our Experts
+                </Button>
+              </Link>
+            </div>
+            <SectionImage
+              src="/images/service-risk.jpg"
+              alt="Risk management consulting"
+              aspect="aspect-[4/3]"
+            />
           </div>
         </div>
       </section>
@@ -230,25 +249,32 @@ export default function ServicesPage() {
       <section id="security" className="py-16 px-4 bg-white scroll-mt-28">
         <div className="mx-auto max-w-6xl">
           <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-              <Lock className="h-5 w-5 text-blue-700" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
+              <Lock className="h-5 w-5 text-amber-600" />
             </div>
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">
+            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
               Consulting
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Security Projects</h2>
-          <div className="max-w-3xl space-y-4 text-gray-600">
-            <p>
-              CPTEDINDIA provides end-to-end advisory for security projects — from initial planning and
-              design through to implementation and review. We work with organisations to ensure security
-              infrastructure is effective, cost-efficient, and aligned with CPTED principles.
-            </p>
-            <Link href="/contact">
-              <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
-                Enquire About a Project
-              </Button>
-            </Link>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Security Projects</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <SectionImage
+              src="/images/service-security.jpg"
+              alt="Security project consulting"
+              aspect="aspect-[4/3]"
+            />
+            <div className="space-y-4 text-gray-600">
+              <p>
+                CPTEDINDIA provides end-to-end advisory for security projects — from initial planning and
+                design through to implementation and review. We work with organisations to ensure security
+                infrastructure is effective, cost-efficient, and aligned with CPTED principles.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                  Enquire About a Project
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -266,18 +292,25 @@ export default function ServicesPage() {
               Consulting
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Expatriate Services</h2>
-          <div className="max-w-3xl space-y-4 text-gray-600">
-            <p>
-              CPTEDINDIA offers dedicated safety and security advisory for expatriates and international
-              organisations operating in India. We help navigate local security landscapes, assess risk
-              exposures, and implement practical safety measures tailored to the expatriate context.
-            </p>
-            <Link href="/contact">
-              <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
-                Contact Us
-              </Button>
-            </Link>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Expatriate Services</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4 text-gray-600">
+              <p>
+                CPTEDINDIA offers dedicated safety and security advisory for expatriates and international
+                organisations operating in India. We help navigate local security landscapes, assess risk
+                exposures, and implement practical safety measures tailored to the expatriate context.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+            <SectionImage
+              src="/images/service-expatriate.jpg"
+              alt="Expatriate safety services"
+              aspect="aspect-[4/3]"
+            />
           </div>
         </div>
       </section>
@@ -288,14 +321,22 @@ export default function ServicesPage() {
       <section id="training" className="py-16 px-4 bg-white scroll-mt-28">
         <div className="mx-auto max-w-6xl">
           <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-              <BookOpen className="h-5 w-5 text-blue-700" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50">
+              <BookOpen className="h-5 w-5 text-amber-600" />
             </div>
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">
+            <span className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
               Training
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">CPTED Certification Training</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">CPTED Certification Training</h2>
+
+          {/* Training section image */}
+          <SectionImage
+            src="/images/training-cpted.jpg"
+            alt="CPTED certification training"
+            aspect="aspect-[21/6]"
+            className="mb-10 w-full"
+          />
 
           {/* Overview */}
           <div className="max-w-3xl space-y-4 text-gray-600 mb-12">
@@ -320,9 +361,9 @@ export default function ServicesPage() {
           </div>
 
           {/* Who Should Attend */}
-          <div className="bg-blue-50 rounded-xl p-6 mb-12 max-w-3xl">
+          <div className="bg-amber-50 rounded-xl p-6 mb-12 max-w-3xl">
             <div className="flex items-center gap-3 mb-3">
-              <Users className="h-5 w-5 text-blue-700" />
+              <Users className="h-5 w-5 text-amber-600" />
               <h3 className="font-bold text-gray-900">Who Should Attend</h3>
             </div>
             <p className="text-sm text-gray-600">
@@ -364,28 +405,28 @@ export default function ServicesPage() {
                 <ul className="space-y-1">
                   {genericModuleTopics.map((topic) => (
                     <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
                       {topic}
                     </li>
                   ))}
                 </ul>
               </div>
               <Link href="/contact" className="mt-6">
-                <Button variant="outline" className="w-full border-blue-700 text-blue-700 hover:bg-blue-50">
+                <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
                   Enquire
                 </Button>
               </Link>
             </div>
 
             {/* Tier 2 — CCA */}
-            <div className="bg-white rounded-xl border-2 border-blue-600 p-6 flex flex-col relative">
+            <div className="bg-white rounded-xl border-2 border-amber-500 p-6 flex flex-col relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                   CCA
                 </span>
               </div>
               <div className="mb-4">
-                <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <span className="inline-block bg-amber-50 text-amber-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                   For Beginners
                 </span>
                 <h3 className="text-xl font-bold text-gray-900">
@@ -405,7 +446,7 @@ export default function ServicesPage() {
                 <ul className="space-y-1">
                   {ccaAdditional.map((topic) => (
                     <li key={topic} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0 mt-0.5" />
                       {topic}
                     </li>
                   ))}
@@ -458,7 +499,7 @@ export default function ServicesPage() {
                 </p>
               </div>
               <Link href="/courses" className="mt-6">
-                <Button variant="outline" className="w-full border-blue-700 text-blue-700 hover:bg-blue-50">
+                <Button variant="outline" className="w-full border-gray-300 text-amber-600 hover:bg-amber-50">
                   View Course
                 </Button>
               </Link>
@@ -471,7 +512,7 @@ export default function ServicesPage() {
       <section className="py-16 px-4 bg-gray-900 text-white text-center">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-blue-100 mb-8">
+          <p className="text-gray-300 mb-8">
             Connect with us for a free consultation or enrol in a CPTED training course today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

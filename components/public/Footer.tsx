@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
+import { Shield } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,28 +8,29 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-700">
-                <BookOpen className="h-5 w-5 text-white" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800 border border-gray-700">
+                <Shield className="h-4 w-4 text-amber-400" />
               </div>
               <span className="text-xl font-bold text-white">CPTEDINDIA</span>
             </div>
             <p className="text-sm text-gray-400">
-              Empowering learners across India with expert-curated online courses.
+              Proactive crime prevention through environmental design, risk management, and professional certification across India.
             </p>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-sm hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/courses" className="text-sm hover:text-white transition-colors">Courses</Link></li>
-              <li><Link href="/contact" className="text-sm hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="text-sm hover:text-amber-400 transition-colors">About</Link></li>
+              <li><Link href="/services" className="text-sm hover:text-amber-400 transition-colors">Services</Link></li>
+              <li><Link href="/courses" className="text-sm hover:text-amber-400 transition-colors">Courses</Link></li>
+              <li><Link href="/contact" className="text-sm hover:text-amber-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Account</h3>
             <ul className="space-y-2">
-              <li><Link href="/auth/login" className="text-sm hover:text-white transition-colors">Log In</Link></li>
-              <li><Link href="/auth/signup" className="text-sm hover:text-white transition-colors">Sign Up</Link></li>
+              <li><Link href="/auth/login" className="text-sm hover:text-amber-400 transition-colors">Log In</Link></li>
+              <li><Link href="/auth/signup" className="text-sm hover:text-amber-400 transition-colors">Sign Up</Link></li>
             </ul>
           </div>
         </div>

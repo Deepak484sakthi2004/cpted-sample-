@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { getPublishedCourses } from "@/lib/actions/courses";
 import { Search, BookOpen } from "lucide-react";
+import PageBanner from "@/components/public/PageBanner";
 
 type Course = {
   id: string;
@@ -50,12 +51,14 @@ export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 px-4">
+      <PageBanner src="/images/courses-hero.jpg" className="py-12 px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Explore Our Courses</h1>
-          <p className="text-blue-100">Find the perfect course to advance your skills and career.</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+            Explore Our <span className="text-amber-400">Courses</span>
+          </h1>
+          <p className="text-white/80">Find the perfect CPTED certification to advance your career.</p>
         </div>
-      </div>
+      </PageBanner>
 
       <div className="mx-auto max-w-7xl px-4 py-10">
         {/* Filters */}

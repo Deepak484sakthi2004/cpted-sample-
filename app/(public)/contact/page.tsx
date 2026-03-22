@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { submitContact } from "@/lib/actions/contact";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import PageBanner from "@/components/public/PageBanner";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -35,10 +36,12 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 px-4 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact Us</h1>
-        <p className="text-blue-100">Have a question? We'd love to hear from you.</p>
-      </div>
+      <PageBanner src="/images/contact-hero.jpg" className="py-12 px-4 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+          Contact <span className="text-amber-400">Us</span>
+        </h1>
+        <p className="text-white/80">Have a question? We&apos;d love to hear from you.</p>
+      </PageBanner>
 
       <div className="mx-auto max-w-5xl px-4 py-12">
         <div className="grid md:grid-cols-2 gap-12">
@@ -52,8 +55,8 @@ export default function ContactPage() {
                 { icon: MapPin, label: "Location", value: "India" },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 flex-shrink-0">
-                    <Icon className="h-5 w-5 text-blue-700" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 flex-shrink-0">
+                    <Icon className="h-5 w-5 text-amber-500" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900">{label}</p>

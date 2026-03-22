@@ -98,8 +98,8 @@ export default async function HomePage() {
                 key={title}
                 className="bg-white rounded-xl border border-gray-200 p-6 text-center hover:shadow-md transition-shadow"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-                  <Icon className="h-6 w-6 text-blue-700" />
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-50">
+                  <Icon className="h-6 w-6 text-amber-500" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
                 <p className="text-sm text-gray-500">{description}</p>
@@ -122,7 +122,7 @@ export default async function HomePage() {
             <Link href="/services">
               <Button
                 variant="outline"
-                className="border-blue-700 text-blue-700 hover:bg-blue-50"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50"
               >
                 View All Services →
               </Button>
@@ -131,8 +131,8 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map(({ title, description, href }) => (
               <Link key={title} href={href} className="group">
-                <div className="bg-white rounded-xl border border-gray-200 p-6 h-full hover:shadow-md hover:border-blue-300 transition-all">
-                  <h3 className="font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
+                <div className="bg-white rounded-xl border border-gray-200 p-6 h-full hover:shadow-md hover:border-amber-300 transition-all">
+                  <h3 className="font-bold text-gray-900 mb-3 group-hover:text-amber-500 transition-colors">
                     {title}
                   </h3>
                   <p className="text-sm text-gray-500">{description}</p>
@@ -159,7 +159,7 @@ export default async function HomePage() {
               <Link href="/courses">
                 <Button
                   variant="outline"
-                  className="border-blue-700 text-blue-700 hover:bg-blue-50"
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50"
                 >
                   View All Courses →
                 </Button>
@@ -189,15 +189,15 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-4xl font-bold mb-2">{stats.courses}+</p>
-              <p className="text-blue-200 font-medium">CPTED Courses</p>
+              <p className="text-gray-400 font-medium">CPTED Courses</p>
             </div>
             <div>
               <p className="text-4xl font-bold mb-2">{stats.students}+</p>
-              <p className="text-blue-200 font-medium">Trained Professionals</p>
+              <p className="text-gray-400 font-medium">Trained Professionals</p>
             </div>
             <div>
               <p className="text-4xl font-bold mb-2">{stats.certificates}+</p>
-              <p className="text-blue-200 font-medium">Certificates Issued</p>
+              <p className="text-gray-400 font-medium">Certificates Issued</p>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default async function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-blue-700 text-blue-700 hover:bg-blue-50 font-semibold px-10"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold px-10"
               >
                 Create Your Account
               </Button>

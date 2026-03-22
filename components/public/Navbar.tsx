@@ -1,9 +1,36 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, BookOpen } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function Logo() {
+  const [logoError, setLogoError] = useState(false);
+  return (
+    <Link href="/" className="flex items-center gap-2">
+      {!logoError ? (
+        <Image
+          src="/images/logo.png"
+          alt="CPTEDINDIA"
+          width={140}
+          height={40}
+          className="h-9 w-auto object-contain"
+          onError={() => setLogoError(true)}
+          priority
+        />
+      ) : (
+        <>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-900">
+            <Shield className="h-4 w-4 text-amber-400" />
+          </div>
+          <span className="text-xl font-bold text-gray-900">CPTEDINDIA</span>
+        </>
+      )}
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,35 +40,44 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-700">
-              <BookOpen className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-blue-800">CPTEDINDIA</span>
-          </Link>
+          <Logo />
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Home</Link>
-            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">About</Link>
-            <Link href="/courses" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Courses</Link>
-            <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Services</Link>
-            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Contact</Link>
+            {[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/about" },
+              { label: "Courses", href: "/courses" },
+              { label: "Services", href: "/services" },
+              { label: "Contact", href: "/contact" },
+            ].map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-sm font-medium text-gray-600 hover:text-amber-500 transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* Auth buttons */}
           <div className="hidden md:flex items-center gap-3">
             <Link href="/auth/login">
-              <Button variant="outline" size="sm">Log In</Button>
+              <Button variant="outline" size="sm" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+                Log In
+              </Button>
             </Link>
             <Link href="/auth/signup">
-              <Button size="sm" className="bg-amber-500 hover:bg-amber-400 text-white font-semibold">Sign Up</Button>
+              <Button size="sm" className="bg-amber-500 hover:bg-amber-400 text-white font-semibold">
+                Sign Up
+              </Button>
             </Link>
           </div>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-600"
+            className="md:hidden p-2 rounded-md text-gray-600 hover:text-amber-500"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -53,17 +89,32 @@ export default function Navbar() {
         {menuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col gap-4">
-              <Link href="/" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="/courses" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Courses</Link>
-              <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Services</Link>
-              <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-blue-700" onClick={() => setMenuOpen(false)}>Contact</Link>
+              {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Courses", href: "/courses" },
+                { label: "Services", href: "/services" },
+                { label: "Contact", href: "/contact" },
+              ].map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="text-sm font-medium text-gray-600 hover:text-amber-500"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
               <div className="flex gap-3 pt-2 border-t border-gray-200">
                 <Link href="/auth/login" onClick={() => setMenuOpen(false)}>
-                  <Button variant="outline" size="sm" className="w-full">Log In</Button>
+                  <Button variant="outline" size="sm" className="w-full border-gray-300 text-gray-700 hover:bg-gray-50">
+                    Log In
+                  </Button>
                 </Link>
                 <Link href="/auth/signup" onClick={() => setMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-amber-500 hover:bg-amber-400 text-white font-semibold">Sign Up</Button>
+                  <Button size="sm" className="w-full bg-amber-500 hover:bg-amber-400 text-white font-semibold">
+                    Sign Up
+                  </Button>
                 </Link>
               </div>
             </nav>

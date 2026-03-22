@@ -54,10 +54,10 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-700">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900">
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-blue-800">CPTEDINDIA</span>
+              <span className="text-2xl font-bold text-gray-900">CPTEDINDIA</span>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export default function LoginPage() {
 
           <p className="mt-6 text-center text-sm text-gray-500">
             Don't have an account?{" "}
-            <Link href="/auth/signup" className="text-blue-700 font-medium hover:underline">
+            <Link href="/auth/signup" className="text-amber-600 font-medium hover:underline">
               Sign up
             </Link>
           </p>
