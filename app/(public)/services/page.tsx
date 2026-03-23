@@ -74,7 +74,10 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Page Header */}
-      <PageBanner src="/images/services-hero.jpg" className="py-16 px-4 text-center">
+      <PageBanner
+        src="/images/iStock-3.jpg" // placeholder: /images/services-hero.jpg
+        className="py-16 px-4 text-center"
+      >
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Our <span className="text-amber-400">Services</span>
@@ -111,7 +114,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: CPTED ── Type 1: Dark overlay, white floating cards */}
       <div id="cpted" className="scroll-mt-28">
         <PageBanner
-          src="/images/service-cpted.jpg"
+          src="/images/iStock-2.jpg" // placeholder: /images/service-cpted.jpg
           overlayClass="bg-gray-900/88"
           className="py-16 px-4"
         >
@@ -204,7 +207,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: RISK MANAGEMENT ── Type 2: Full-bleed, lighter overlay */}
       <div id="risk" className="scroll-mt-28">
         <PageBanner
-          src="/images/service-risk.jpg"
+          src="/images/iStock-5.jpg" // placeholder: /images/service-risk.jpg
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
           className="py-16 px-4"
         >
@@ -240,7 +243,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: SECURITY PROJECTS ── Type 2: Full-bleed */}
       <div id="security" className="scroll-mt-28">
         <PageBanner
-          src="/images/service-security.jpg"
+          src="/images/iStock-3.jpg" // placeholder: /images/service-security.jpg
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
           className="py-16 px-4"
         >
@@ -273,7 +276,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: EXPATRIATE ── Type 2: Full-bleed */}
       <div id="expatriate" className="scroll-mt-28">
         <PageBanner
-          src="/images/service-expatriate.jpg"
+          src="/images/iStock-2.jpg" // placeholder: /images/service-expatriate.jpg
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
           className="py-16 px-4"
         >
@@ -307,7 +310,7 @@ export default function ServicesPage() {
       <div id="training" className="scroll-mt-28">
         {/* Training intro with background image */}
         <PageBanner
-          src="/images/training-cpted.jpg"
+          src="/images/iStock-5.jpg" // placeholder: /images/training-cpted.jpg
           overlayClass="bg-gray-900/88"
           className="py-16 px-4"
         >
