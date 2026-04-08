@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/iStock-2.jpg",
+    image: "/images/cpted-safe-space-banner.jpg",
     heading: "Crime Prevention Through",
     headingHighlight: "Environmental Design",
     description:
@@ -19,7 +19,7 @@ const slides = [
     ],
   },
   {
-    image: "/images/iStock-3.jpg",
+    image: "/images/risk-assessment.jpg",
     heading: "CPTED Audit &",
     headingHighlight: "Certification",
     description:
@@ -30,7 +30,7 @@ const slides = [
     ],
   },
   {
-    image: "/images/iStock-5.jpg",
+    image: "/images/certification-hero.jpg",
     heading: "Earn Your CPTED",
     headingHighlight: "Professional Certification",
     description:

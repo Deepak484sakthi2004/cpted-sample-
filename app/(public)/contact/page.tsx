@@ -37,7 +37,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <PageBanner
-        src="/images/iStock-3.jpg" // placeholder: /images/contact-hero.jpg
+        src="/images/security-consulting.jpg"
         className="py-12 px-4 text-center"
       >
         <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white">

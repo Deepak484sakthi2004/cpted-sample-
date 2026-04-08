@@ -52,7 +52,7 @@ export default function CoursesPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <PageBanner
-        src="/images/iStock-5.jpg" // placeholder: /images/courses-hero.jpg
+        src="/images/certification-hero.jpg"
         className="py-12 px-4"
       >
         <div className="mx-auto max-w-4xl text-center">

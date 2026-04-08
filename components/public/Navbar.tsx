@@ -12,7 +12,7 @@ function Logo() {
     <Link href="/" className="flex items-center gap-2">
       {!logoError ? (
         <Image
-          src="/images/logo.png"
+          src="/images/logo-ci.jpg"
           alt="CPTEDINDIA"
           width={140}
           height={40}

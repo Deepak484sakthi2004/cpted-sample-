@@ -15,7 +15,7 @@ export default function AboutPage() {
     <div>
       {/* Hero Banner */}
       <PageBanner
-        src="/images/iStock-5.jpg" // placeholder: /images/about-hero.jpg
+        src="/images/iStock-5.jpg"
         className="py-20 px-4"
       >
         <div className="mx-auto max-w-3xl text-center">
@@ -31,7 +31,7 @@ export default function AboutPage() {
 
       {/* Mission — Type 3: frosted glass card over full-bleed image */}
       <PageBanner
-          src="/images/iStock-2.jpg" // placeholder: /images/about-mission.jpg
+          src="/images/team-collaboration.jpg"
         overlayClass="bg-gradient-to-r from-gray-900/80 to-gray-900/25"
         className="py-16 px-4"
       >
