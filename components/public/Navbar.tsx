@@ -9,25 +9,28 @@ import { Button } from "@/components/ui/button";
 function Logo() {
   const [logoError, setLogoError] = useState(false);
   return (
-    <Link href="/" className="flex items-center gap-2">
+    <Link href="/" className="flex items-center gap-3">
       {!logoError ? (
         <Image
           src="/images/logo-ci.jpg"
           alt="CPTEDINDIA"
-          width={140}
-          height={40}
-          className="h-9 w-auto object-contain"
+          width={180}
+          height={52}
+          className="h-12 w-auto object-contain"
           onError={() => setLogoError(true)}
           priority
         />
       ) : (
         <>
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-900">
-            <Shield className="h-4 w-4 text-amber-400" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+            <Shield className="h-5 w-5 text-amber-400" />
           </div>
-          <span className="text-xl font-bold text-gray-900">CPTEDINDIA</span>
+          <span className="text-2xl font-bold text-gray-900">CPTEDINDIA</span>
         </>
       )}
+      <span className="hidden sm:inline-block text-xs text-gray-500 leading-tight max-w-[160px]">
+        Crime Prevention Through Environmental Design
+      </span>
     </Link>
   );
 }

@@ -53,8 +53,8 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "vasanthram227@gmail.com" },
-                { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+                { icon: Mail, label: "Email", value: "office@cptedindia.com" },
+                { icon: Phone, label: "Phone", value: "+91 9886333979 / 9884913382" },
                 { icon: MapPin, label: "Location", value: "India" },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">

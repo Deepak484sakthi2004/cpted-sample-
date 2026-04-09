@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import { Shield, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800 border border-gray-700">
@@ -31,6 +31,23 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/auth/login" className="text-sm hover:text-amber-400 transition-colors">Log In</Link></li>
               <li><Link href="/auth/signup" className="text-sm hover:text-amber-400 transition-colors">Sign Up</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-sm">
+                <Mail className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                <a href="mailto:office@cptedindia.com" className="hover:text-amber-400 transition-colors">office@cptedindia.com</a>
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                <Phone className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                <span>9886333979 / 9884913382</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                <MapPin className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                <span>India</span>
+              </li>
             </ul>
           </div>
         </div>

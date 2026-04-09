@@ -9,8 +9,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     image: "/images/cpted-safe-space-banner.jpg",
-    heading: "Crime Prevention Through",
-    headingHighlight: "Environmental Design",
+    heading: "",
+    headingHighlight: "",
     description:
       "CPTEDINDIA applies proactive methodologies and CPTED concepts to implement crime prevention strategies — combining people, space, and design for maximum safety.",
     cta: [
@@ -21,9 +21,9 @@ const slides = [
   {
     image: "/images/risk-assessment.jpg",
     heading: "CPTED Audit &",
-    headingHighlight: "Certification",
+    headingHighlight: "",
     description:
-      "Involve us right from the building design stage to get a holistic safety and security design. We assess, advise, and certify spaces for individuals, institutions, and government bodies.",
+      "We assess, advise, and certify spaces for individuals, institutions, and government bodies.",
     cta: [
       { label: "Learn More", href: "/services", variant: "primary" },
       { label: "Get Started Free", href: "/auth/signup", variant: "outline" },
@@ -31,8 +31,8 @@ const slides = [
   },
   {
     image: "/images/certification-hero.jpg",
-    heading: "Earn Your CPTED",
-    headingHighlight: "Professional Certification",
+    heading: "",
+    headingHighlight: "Earn Your CPTED Professional",
     description:
       "Build credibility with CCA or CCP certifications. Industry-relevant credentials that boost visibility, demonstrate expertise, and give you a competitive edge in safety and security domains.",
     cta: [
@@ -147,10 +147,12 @@ export default function HeroCarousel() {
           CPTEDINDIA
         </span>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-          <span className="text-white">{slide.heading}{" "}</span>
-          <span className="text-amber-400">{slide.headingHighlight}</span>
-        </h1>
+        {(slide.heading || slide.headingHighlight) && (
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-center">
+            {slide.heading && <span className="text-white">{slide.heading}{" "}</span>}
+            {slide.headingHighlight && <span className="text-amber-400">{slide.headingHighlight}</span>}
+          </h1>
+        )}
         <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
           {slide.description}
         </p>

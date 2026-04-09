@@ -91,7 +91,7 @@ export default function ServicesPage() {
       {/* Quick Nav */}
       <nav className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 overflow-x-auto">
-          <div className="flex gap-6 py-3 whitespace-nowrap text-sm font-medium">
+          <div className="flex gap-8 py-4 whitespace-nowrap text-base font-medium">
             {[
               { label: "CPTED Consulting", href: "#cpted" },
               { label: "Risk Management", href: "#risk" },
@@ -102,7 +102,7 @@ export default function ServicesPage() {
               <a
                 key={label}
                 href={href}
-                className="text-gray-600 hover:text-amber-600 transition-colors flex-shrink-0"
+                className="text-gray-600 hover:text-amber-600 transition-colors flex-shrink-0 px-1"
               >
                 {label}
               </a>
@@ -244,7 +244,7 @@ export default function ServicesPage() {
       <div id="security" className="scroll-mt-28">
         <PageBanner
           src="/images/iStock-3.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
           className="py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
@@ -277,7 +277,7 @@ export default function ServicesPage() {
       <div id="expatriate" className="scroll-mt-28">
         <PageBanner
           src="/images/expatriate-travel.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
           className="py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
