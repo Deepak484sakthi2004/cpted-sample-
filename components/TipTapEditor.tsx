@@ -92,11 +92,15 @@ export default function TipTapEditor({
           body: formData,
         });
         const data = await res.json();
+        if (!res.ok) {
+          toast.error(data.error || "Image upload failed");
+          return;
+        }
         if (data.url && editor) {
           editor.chain().focus().setImage({ src: data.url }).run();
         }
       } catch {
-        toast.error("Image upload failed");
+        toast.error("Image upload failed — please check your connection and try again");
       } finally {
         uploadingRef.current = false;
       }

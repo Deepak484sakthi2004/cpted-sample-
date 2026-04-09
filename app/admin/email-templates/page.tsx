@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Eye, Edit3, Save, CheckCircle2 } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
 
 const TOKEN_VARIABLES = [
@@ -132,16 +133,30 @@ export default function EmailTemplatesPage() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <p
-                    className={`text-sm font-semibold truncate ${
-                      selected?.id === t.id ? "text-blue-900" : "text-gray-900"
-                    }`}
-                  >
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-gray-400 truncate mt-0.5">
-                    {t.subject}
-                  </p>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <p
+                          className={`text-sm font-semibold truncate ${
+                            selected?.id === t.id ? "text-blue-900" : "text-gray-900"
+                          }`}
+                        >
+                          {t.name}
+                        </p>
+                      </TooltipTrigger>
+                      <TooltipContent>{t.name}</TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <p className="text-xs text-gray-400 truncate mt-0.5">
+                          {t.subject}
+                        </p>
+                      </TooltipTrigger>
+                      <TooltipContent>{t.subject}</TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </div>
               </div>
             </button>

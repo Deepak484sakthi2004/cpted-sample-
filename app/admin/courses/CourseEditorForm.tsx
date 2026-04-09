@@ -11,6 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import TipTapEditor from "@/components/TipTapEditor";
 import ConfirmDialog from "@/components/ConfirmDialog";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   createCourse,
   updateCourseMeta,
@@ -143,7 +144,14 @@ function SortableLesson({
         >
           <GripVertical className="h-4 w-4" />
         </button>
-        <span className="flex-1 text-sm text-gray-700 truncate">{lesson.title}</span>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="flex-1 text-sm text-gray-700 truncate">{lesson.title}</span>
+            </TooltipTrigger>
+            <TooltipContent>{lesson.title}</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <Button
           size="sm"
           variant="ghost"
@@ -683,9 +691,13 @@ export default function CourseEditorForm({
     try {
       const res = await fetch("/api/upload", { method: "POST", body: formData });
       const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error || "Upload failed");
+        return;
+      }
       if (data.url) setMeta((m) => ({ ...m, thumbnail: data.url }));
     } catch {
-      toast.error("Upload failed");
+      toast.error("Upload failed — please check your connection and try again");
     }
     setThumbnailUploading(false);
   };

@@ -18,6 +18,7 @@ import {
 import UserAvatar from "@/components/UserAvatar";
 import { toast } from "sonner";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const navItems = [
   { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -59,8 +60,22 @@ function SidebarContent({ user, pathname, onNavigate }: { user: AppSidebarProps[
         <div className="flex items-center gap-3">
           <UserAvatar name={user.name} size="md" />
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-gray-900 truncate">{user.name}</p>
-            <p className="text-xs text-gray-500 truncate">@{user.username}</p>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-sm font-semibold text-gray-900 truncate">{user.name}</p>
+                </TooltipTrigger>
+                <TooltipContent>{user.name}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-xs text-gray-500 truncate">@{user.username}</p>
+                </TooltipTrigger>
+                <TooltipContent>@{user.username}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <span className="inline-block mt-0.5 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Student</span>
           </div>
         </div>

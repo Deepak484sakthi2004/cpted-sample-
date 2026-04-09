@@ -25,6 +25,8 @@ export default function AdminCoursesPage() {
     if (result.success) {
       toast.success(`"${title}" ${!published ? "published" : "unpublished"}`);
       load();
+    } else {
+      toast.error(result.error || "Failed to update course status");
     }
   };
 

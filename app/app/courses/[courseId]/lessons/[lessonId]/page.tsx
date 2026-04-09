@@ -14,6 +14,7 @@ import { getCourseById } from "@/lib/actions/courses";
 import { getEnrollmentWithProgress } from "@/lib/actions/enrollments";
 import { getCompletedLessonIds } from "@/lib/actions/progress";
 import { toast } from "sonner";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function LessonReaderPage() {
   const params = useParams<{ courseId: string; lessonId: string }>();
@@ -78,6 +79,8 @@ export default function LessonReaderPage() {
       setIsComplete(true);
       setCompletedLessonIds((prev) => [...prev, lessonId]);
       toast.success("Lesson marked as complete!");
+    } else {
+      toast.error("Failed to mark lesson as complete");
     }
     setMarking(false);
   };
@@ -113,7 +116,14 @@ export default function LessonReaderPage() {
         <div className="h-full overflow-y-auto p-3">
           <div className="mb-3">
             <Link href={`/app/courses/${courseId}`} className="text-xs text-blue-600 hover:underline">← Back to Course</Link>
-            <h2 className="text-sm font-bold text-gray-900 mt-2 truncate">{course.title}</h2>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <h2 className="text-sm font-bold text-gray-900 mt-2 truncate">{course.title}</h2>
+                </TooltipTrigger>
+                <TooltipContent>{course.title}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           {course.modules.map((module: any) => (
             <div key={module.id} className="mb-3">
@@ -132,7 +142,14 @@ export default function LessonReaderPage() {
                     ) : (
                       <Circle className="h-3.5 w-3.5 text-gray-300 flex-shrink-0" />
                     )}
-                    <span className="truncate">{lesson.title}</span>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <span className="truncate">{lesson.title}</span>
+                        </TooltipTrigger>
+                        <TooltipContent>{lesson.title}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </Link>
                 );
               })}
@@ -148,7 +165,14 @@ export default function LessonReaderPage() {
           <button onClick={() => setLeftOpen(!leftOpen)} className="p-1.5 rounded hover:bg-gray-100">
             {leftOpen ? <PanelLeftClose className="h-4 w-4 text-gray-600" /> : <PanelLeftOpen className="h-4 w-4 text-gray-600" />}
           </button>
-          <span className="text-sm font-medium text-gray-700 truncate max-w-xs">{currentLesson.title}</span>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="text-sm font-medium text-gray-700 truncate max-w-xs">{currentLesson.title}</span>
+              </TooltipTrigger>
+              <TooltipContent>{currentLesson.title}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <button onClick={() => setRightOpen(!rightOpen)} className="p-1.5 rounded hover:bg-gray-100">
             {rightOpen ? <PanelRightClose className="h-4 w-4 text-gray-600" /> : <PanelRightOpen className="h-4 w-4 text-gray-600" />}
           </button>

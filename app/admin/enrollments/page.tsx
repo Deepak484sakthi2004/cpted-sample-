@@ -44,8 +44,13 @@ export default function AdminEnrollmentsPage() {
 
   const handleBulkRevoke = async () => {
     setBulkRevoking(true);
-    await Promise.all(selected.map((id) => revokeEnrollment(id)));
-    toast.success(`${selected.length} enrollment(s) revoked`);
+    const results = await Promise.all(selected.map((id) => revokeEnrollment(id)));
+    const failed = results.filter((r) => r.error);
+    if (failed.length > 0) {
+      toast.error(`${failed.length} enrollment(s) failed to revoke`);
+    } else {
+      toast.success(`${selected.length} enrollment(s) revoked`);
+    }
     setSelected([]);
     setBulkConfirm(false);
     load();
@@ -215,7 +220,8 @@ export default function AdminEnrollmentsPage() {
                         variant="outline"
                         className="text-red-600 border-red-200 text-xs"
                         onClick={async () => {
-                          await revokeEnrollment(e.id);
+                          const result = await revokeEnrollment(e.id);
+                          if (result.error) { toast.error(result.error); return; }
                           toast.success("Enrollment revoked");
                           load();
                         }}
@@ -228,7 +234,8 @@ export default function AdminEnrollmentsPage() {
                         variant="outline"
                         className="text-green-600 border-green-200 text-xs"
                         onClick={async () => {
-                          await restoreEnrollment(e.id);
+                          const result = await restoreEnrollment(e.id);
+                          if (result.error) { toast.error(result.error); return; }
                           toast.success("Enrollment restored");
                           load();
                         }}

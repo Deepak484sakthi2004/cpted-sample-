@@ -16,6 +16,7 @@ import {
 import UserAvatar from "@/components/UserAvatar";
 import { toast } from "sonner";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -83,8 +84,22 @@ function SidebarContent({ user, pathname, onNavigate }: { user: AdminSidebarProp
         <div className="flex items-center gap-3 mb-3">
           <UserAvatar name={user.name} size="sm" />
           <div className="min-w-0">
-            <p className="text-xs font-semibold truncate">{user.name}</p>
-            <p className="text-xs text-gray-400 truncate">{user.email}</p>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-xs font-semibold truncate">{user.name}</p>
+                </TooltipTrigger>
+                <TooltipContent>{user.name}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-xs text-gray-400 truncate">{user.email}</p>
+                </TooltipTrigger>
+                <TooltipContent>{user.email}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
         </div>
         <button

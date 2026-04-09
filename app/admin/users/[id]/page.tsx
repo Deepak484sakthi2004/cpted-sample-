@@ -254,7 +254,8 @@ export default function AdminUserDetailPage() {
                         variant="outline"
                         className="text-red-600 border-red-200 text-xs"
                         onClick={async () => {
-                          await revokeEnrollment(e.id);
+                          const result = await revokeEnrollment(e.id);
+                          if (result.error) { toast.error(result.error); return; }
                           toast.success("Access revoked");
                           load();
                         }}
@@ -267,7 +268,8 @@ export default function AdminUserDetailPage() {
                         variant="outline"
                         className="text-green-600 border-green-200 text-xs"
                         onClick={async () => {
-                          await restoreEnrollment(e.id);
+                          const result = await restoreEnrollment(e.id);
+                          if (result.error) { toast.error(result.error); return; }
                           toast.success("Access restored");
                           load();
                         }}
@@ -372,7 +374,8 @@ export default function AdminUserDetailPage() {
                       variant="outline"
                       className="text-red-600 border-red-200 text-xs"
                       onClick={async () => {
-                        await revokeCertificate(c.id);
+                        const result = await revokeCertificate(c.id);
+                        if (result.error) { toast.error(result.error); return; }
                         toast.success("Certificate revoked");
                         load();
                       }}

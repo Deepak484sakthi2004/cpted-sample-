@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { toast } from "sonner";
 import { useSession } from "next-auth/react";
 import { getAllNotes, upsertNote } from "@/lib/actions/notes";
 import EmptyState from "@/components/EmptyState";
@@ -27,9 +28,14 @@ export default function NotesPage() {
     if (timers.current[noteId]) clearTimeout(timers.current[noteId]);
     timers.current[noteId] = setTimeout(async () => {
       if (session?.user.id) {
-        await upsertNote(session.user.id, courseId, value);
-        setSaveStatuses((prev) => ({ ...prev, [noteId]: "saved" }));
-        setTimeout(() => setSaveStatuses((prev) => ({ ...prev, [noteId]: "idle" })), 2000);
+        try {
+          await upsertNote(session.user.id, courseId, value);
+          setSaveStatuses((prev) => ({ ...prev, [noteId]: "saved" }));
+          setTimeout(() => setSaveStatuses((prev) => ({ ...prev, [noteId]: "idle" })), 2000);
+        } catch {
+          setSaveStatuses((prev) => ({ ...prev, [noteId]: "idle" }));
+          toast.error("Failed to save note");
+        }
       }
     }, 1000);
   };

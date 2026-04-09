@@ -30,9 +30,10 @@ const slides = [
   },
   {
     image: "/images/certification-hero.jpg",
-    heading: "",
-    headingHighlight: "",
-    description: "",
+    heading: "Earn Your",
+    headingHighlight: "Professional",
+    description: "Get industry-recognised CPTED certifications that validate your expertise in designing safer spaces and communities.",
+    overlay: "bg-gradient-to-t from-black/70 via-black/20 to-transparent",
     cta: [
       { label: "View Courses", href: "/courses", variant: "primary" },
       { label: "Get Started Free", href: "/auth/signup", variant: "outline" },
@@ -132,7 +133,7 @@ export default function HeroCarousel() {
           />
         )}
         {/* neutral dark tint — lets photo breathe, ensures text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/30" />
+        <div className={`absolute inset-0 ${"overlay" in slide && slide.overlay ? slide.overlay : "bg-gradient-to-t from-black/80 via-black/55 to-black/30"}`} />
       </div>
 
       {/* Slide content */}
