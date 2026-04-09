@@ -33,7 +33,8 @@ const slides = [
     heading: "Earn Your",
     headingHighlight: "Professional",
     description: "Get industry-recognised CPTED certifications that validate your expertise in designing safer spaces and communities.",
-    overlay: "bg-gradient-to-t from-black/70 via-black/20 to-transparent",
+    overlay: "bg-gradient-to-b from-black/60 via-transparent to-black/70",
+    split: true,
     cta: [
       { label: "View Courses", href: "/courses", variant: "primary" },
       { label: "Get Started Free", href: "/auth/signup", variant: "outline" },
@@ -136,53 +137,71 @@ export default function HeroCarousel() {
         <div className={`absolute inset-0 ${"overlay" in slide && slide.overlay ? slide.overlay : "bg-gradient-to-t from-black/80 via-black/55 to-black/30"}`} />
       </div>
 
-      {/* Slide content */}
-      <div
-        key={fadeKey}
-        className="relative mx-auto max-w-4xl text-center animate-fade-in"
-      >
-        {(slide.heading || slide.headingHighlight) && (
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-center">
-            {slide.heading && <span className="text-white">{slide.heading}{" "}</span>}
-            {slide.headingHighlight && <span className="text-amber-400">{slide.headingHighlight}</span>}
-          </h1>
-        )}
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-          {slide.description}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {slide.cta.map(({ label, href, variant }) =>
-            variant === "primary" ? (
-              <Link
-                key={label}
-                href={href}
-                onClick={(e) => isDragging.current && e.preventDefault()}
-              >
-                <Button
-                  size="lg"
-                  className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg shadow-amber-900/30 transition-all duration-200"
-                >
-                  {label}
-                </Button>
-              </Link>
-            ) : (
-              <Link
-                key={label}
-                href={href}
-                onClick={(e) => isDragging.current && e.preventDefault()}
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white/70 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-8 transition-all duration-200"
-                >
-                  {label}
-                </Button>
-              </Link>
-            )
+      {"split" in slide && slide.split ? (
+        /* Split layout: heading top-quarter, description+CTA bottom-quarter */
+        <>
+          {(slide.heading || slide.headingHighlight) && (
+            <div key={`${fadeKey}-top`} className="absolute top-8 left-0 right-0 px-4 text-center animate-fade-in">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
+                {slide.heading && <span className="text-white">{slide.heading}{" "}</span>}
+                {slide.headingHighlight && <span className="text-amber-400">{slide.headingHighlight}</span>}
+              </h1>
+            </div>
           )}
+          <div key={`${fadeKey}-bottom`} className="absolute bottom-16 left-0 right-0 px-4 text-center animate-fade-in">
+            <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow">
+              {slide.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {slide.cta.map(({ label, href, variant }) =>
+                variant === "primary" ? (
+                  <Link key={label} href={href} onClick={(e) => isDragging.current && e.preventDefault()}>
+                    <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg shadow-amber-900/30 transition-all duration-200">
+                      {label}
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link key={label} href={href} onClick={(e) => isDragging.current && e.preventDefault()}>
+                    <Button size="lg" variant="outline" className="border-2 border-white/70 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-8 transition-all duration-200">
+                      {label}
+                    </Button>
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+        </>
+      ) : (
+        /* Default centered layout */
+        <div key={fadeKey} className="relative mx-auto max-w-4xl text-center animate-fade-in">
+          {(slide.heading || slide.headingHighlight) && (
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-center">
+              {slide.heading && <span className="text-white">{slide.heading}{" "}</span>}
+              {slide.headingHighlight && <span className="text-amber-400">{slide.headingHighlight}</span>}
+            </h1>
+          )}
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            {slide.description}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {slide.cta.map(({ label, href, variant }) =>
+              variant === "primary" ? (
+                <Link key={label} href={href} onClick={(e) => isDragging.current && e.preventDefault()}>
+                  <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg shadow-amber-900/30 transition-all duration-200">
+                    {label}
+                  </Button>
+                </Link>
+              ) : (
+                <Link key={label} href={href} onClick={(e) => isDragging.current && e.preventDefault()}>
+                  <Button size="lg" variant="outline" className="border-2 border-white/70 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-8 transition-all duration-200">
+                    {label}
+                  </Button>
+                </Link>
+              )
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Prev arrow */}
       <button
