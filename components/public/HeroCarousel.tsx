@@ -33,8 +33,7 @@ const slides = [
     image: "/images/certification-hero.jpg",
     heading: "",
     headingHighlight: "",
-    description:
-      "Build credibility with CCA or CCP certifications. Industry-relevant credentials that boost visibility, demonstrate expertise, and give you a competitive edge in safety and security domains.",
+    description: "",
     cta: [
       { label: "View Courses", href: "/courses", variant: "primary" },
       { label: "Get Started Free", href: "/auth/signup", variant: "outline" },
