@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { getLevelColor, formatCurrency } from "@/lib/utils";
 import { BookOpen } from "lucide-react";
 
@@ -50,14 +51,28 @@ export default function CourseCard({
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-gray-900 text-sm leading-tight line-clamp-2">{title}</h3>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <h3 className="font-semibold text-gray-900 text-sm leading-tight line-clamp-2 cursor-default">{title}</h3>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">{title}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <Badge className={`text-xs flex-shrink-0 ${getLevelColor(level)}`}>
             {level.charAt(0) + level.slice(1).toLowerCase()}
           </Badge>
         </div>
 
         {shortDescription && (
-          <p className="text-xs text-gray-500 line-clamp-2 mb-3">{shortDescription}</p>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <p className="text-xs text-gray-500 line-clamp-2 mb-3 cursor-default">{shortDescription}</p>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">{shortDescription}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
 
         {/* Progress bar (student variant) */}
