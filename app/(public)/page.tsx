@@ -20,27 +20,27 @@ export default async function HomePage() {
   const benefits = [
     {
       icon: Shield,
-      title: "Our Mission",
+      title: "OUR MISSION",
       description:
-        "CPTEDINDIA provides top-tier services, fostering a crime-free society through expertise and community engagement. Our initiatives enhance quality of life and potentially increasing property values while reducing possible crime and insurance costs.",
+        "Empowering professionals and learners to design security and Safety\n\nTo support the students and the next generation enthusiasts in crime Prevention and Environmental design",
     },
     {
       icon: Eye,
       title: "Environmental Design",
       description:
-        "India's Primary and premier institution focusing only on CPTED as a core area. CPTED strategies ensure people are visible where they need to be seen — through design elements that enhance natural surveillance and territorial reinforcement.",
+        "CPTED strategies ensure people are visible where they need to be seen — through design elements that enhance natural surveillance and territorial reinforcement.",
     },
     {
       icon: MapPin,
-      title: "Expert-Led Approach",
+      title: "CPTED Audit & Certification",
       description:
-        "Expertise provided by Criminologist and strategist who deal with CRIME and Prevention Strategies.",
+        "Comprehensive on-site assessments for residential, institutional, government, and commercial spaces to identify and address safety vulnerabilities.",
     },
     {
       icon: BookOpen,
       title: "Professional Training",
       description:
-        "An ISO Certified company with reputation and backed by client's trust. Earn industry-recognized CPTED certifications — CCA or CCP — with customized training modules tailored to your organisation's specific needs.",
+        "Earn industry-recognized CPTED certifications — CCA or CCP — with customized training modules tailored to your organisation's specific needs.",
     },
   ];
 
@@ -56,9 +56,14 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Why Choose CPTEDINDIA?
             </h2>
-            <p className="text-gray-500 max-w-3xl mx-auto">
-              CPTEDINDIA provides top-tier services, fostering a crime-free society through expertise and community engagement. Our initiatives enhance quality of life and potentially increasing property values while reducing possible crime and insurance costs.
-            </p>
+            <div className="text-gray-500 max-w-3xl mx-auto space-y-4">
+              <p>
+                CPTEDINDIA provides top-tier services, fostering a crime-free society through expertise and community engagement. Our initiatives enhance quality of life and potentially increasing property values while reducing possible crime and insurance costs.
+              </p>
+              <p>India&apos;s Primary and premier institution focusing only on CPTED as a core area.</p>
+              <p>Expertise provided by Criminologist and strategist who deal with CRIME and Prevention Strategies.</p>
+              <p>An ISO Certified company with reputation and backed by client&apos;s trust.</p>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map(({ icon: Icon, title, description }) => (
@@ -69,9 +74,68 @@ export default async function HomePage() {
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20">
                   <Icon className="h-6 w-6 text-amber-400" />
                 </div>
-                <h3 className="font-bold text-white text-lg mb-2">{title}</h3>
-                <p className="text-[15px] text-gray-300">{description}</p>
+                <h3 className="font-bold text-white text-xl mb-2">{title}</h3>
+                <p className="text-base text-gray-300 whitespace-pre-line">{description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Scroll 3 — Services overview */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Services</h2>
+              <p className="text-gray-500">
+                From CPTED audits to risk management — we cover every dimension of safety.
+              </p>
+            </div>
+            <Link href="/services">
+              <Button
+                variant="outline"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
+                View All Services →
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "CPTED Consulting",
+                description:
+                  "Proactive crime prevention strategies through environmental design. We assess spaces and advocate evidence-based changes to improve safety across any sector.",
+                href: "/services#cpted",
+              },
+              {
+                title: "Risk Management",
+                description:
+                  "Structured frameworks to manage possible harmful activities tailored to your sector's unique credentials and risk appetite.",
+                href: "/services#risk",
+              },
+              {
+                title: "Security Projects",
+                description:
+                  "End-to-end security project consulting — from planning and design to implementation and review.",
+                href: "/services#security",
+              },
+              {
+                title: "Expatriate Services",
+                description:
+                  "Dedicated safety and security advisory services for expatriates and international organisations operating in India.",
+                href: "/services#expatriate",
+              },
+            ].map(({ title, description, href }) => (
+              <Link key={title} href={href} className="group">
+                <div className="bg-gray-900 rounded-xl p-6 h-full hover:shadow-md hover:border-amber-300 transition-all">
+                  <h3 className="font-bold text-white text-lg mb-3 group-hover:text-amber-400 transition-colors">
+                    {title}
+                  </h3>
+                  <p className="text-base text-gray-300">{description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

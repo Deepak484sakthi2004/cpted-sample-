@@ -14,22 +14,22 @@ function Logo() {
         <Image
           src="/images/logo-ci.jpg"
           alt="CPTEDINDIA"
-          width={180}
-          height={52}
-          className="h-12 w-auto object-contain"
+          width={220}
+          height={64}
+          className="h-14 w-auto object-contain"
           onError={() => setLogoError(true)}
           priority
         />
       ) : (
         <>
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
-            <Shield className="h-5 w-5 text-amber-400" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
+            <Shield className="h-6 w-6 text-amber-400" />
           </div>
           <span className="text-2xl font-bold text-gray-900">CPTEDINDIA</span>
         </>
       )}
-      <span className="hidden sm:inline-block text-xs text-gray-500 leading-tight max-w-[160px]">
-        Crime Prevention Through Environmental Design
+      <span className="hidden sm:inline-block text-sm italic text-green-600 font-semibold leading-tight">
+        Enabling Safer Space by Design
       </span>
     </Link>
   );

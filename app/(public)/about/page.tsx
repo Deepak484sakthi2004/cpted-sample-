@@ -139,13 +139,13 @@ export default function AboutPage() {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-gray-50 rounded-xl border border-gray-200 p-6"
+                className="bg-gray-900 rounded-xl p-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-50 mb-4">
-                  <Icon className="h-6 w-6 text-amber-500" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20 mb-4">
+                  <Icon className="h-6 w-6 text-amber-400" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600">{desc}</p>
+                <h3 className="font-bold text-white text-lg mb-2">{title}</h3>
+                <p className="text-base text-gray-300">{desc}</p>
               </div>
             ))}
           </div>

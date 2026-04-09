@@ -134,7 +134,7 @@ export default function HeroCarousel() {
           />
         )}
         {/* neutral dark tint — lets photo breathe, ensures text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/30" />
       </div>
 
       {/* Slide content */}
@@ -142,11 +142,6 @@ export default function HeroCarousel() {
         key={fadeKey}
         className="relative mx-auto max-w-4xl text-center animate-fade-in"
       >
-        {/* Badge pill above heading */}
-        <span className="inline-block mb-4 px-4 py-1 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-sm font-semibold tracking-wide uppercase">
-          CPTEDINDIA
-        </span>
-
         {(slide.heading || slide.headingHighlight) && (
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-center">
             {slide.heading && <span className="text-white">{slide.heading}{" "}</span>}
