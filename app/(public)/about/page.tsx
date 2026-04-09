@@ -14,10 +14,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Banner */}
-      <PageBanner
-        src="/images/iStock-5.jpg"
-        className="py-20 px-4"
-      >
+      <div className="bg-gray-900/95 py-20 px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             About <span className="text-amber-400">CPTEDINDIA</span>
@@ -27,7 +24,7 @@ export default function AboutPage() {
             management, and professional certification across India.
           </p>
         </div>
-      </PageBanner>
+      </div>
 
       {/* Mission — Type 3: frosted glass card over full-bleed image */}
       <PageBanner
