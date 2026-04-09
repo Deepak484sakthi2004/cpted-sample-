@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Shield, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,10 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800 border border-gray-700">
-                <Shield className="h-4 w-4 text-amber-400" />
-              </div>
-              <span className="text-xl font-bold text-white">CPTEDINDIA</span>
+              <Image
+                src="/images/logo-ci.jpg"
+                alt="CPTEDINDIA"
+                width={140}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-gray-400">
               Proactive crime prevention through environmental design, risk management, and professional certification across India.

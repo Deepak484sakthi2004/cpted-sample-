@@ -32,7 +32,7 @@ const slides = [
   {
     image: "/images/certification-hero.jpg",
     heading: "",
-    headingHighlight: "Earn Your CPTED Professional",
+    headingHighlight: "",
     description:
       "Build credibility with CCA or CCP certifications. Industry-relevant credentials that boost visibility, demonstrate expertise, and give you a competitive edge in safety and security domains.",
     cta: [
