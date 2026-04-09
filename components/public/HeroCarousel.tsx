@@ -11,8 +11,7 @@ const slides = [
     image: "/images/cpted-safe-space-banner.jpg",
     heading: "",
     headingHighlight: "",
-    description:
-      "CPTEDINDIA applies proactive methodologies and CPTED concepts to implement crime prevention strategies — combining people, space, and design for maximum safety.",
+    description: "",
     cta: [
       { label: "Our Services", href: "/services", variant: "primary" },
       { label: "Contact Us", href: "/contact", variant: "outline" },
