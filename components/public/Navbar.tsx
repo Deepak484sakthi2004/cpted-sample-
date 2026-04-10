@@ -14,23 +14,23 @@ function Logo() {
         <Image
           src="/images/logo-ci.jpg"
           alt="CPTEDINDIA"
-          width={220}
-          height={64}
-          className="h-14 w-auto object-contain"
+          width={240}
+          height={72}
+          className="h-16 w-auto object-contain"
           onError={() => setLogoError(true)}
           priority
         />
       ) : (
-        <>
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
-            <Shield className="h-6 w-6 text-amber-400" />
-          </div>
-          <span className="text-2xl font-bold text-gray-900">CPTEDINDIA</span>
-        </>
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gray-900">
+          <Shield className="h-7 w-7 text-amber-400" />
+        </div>
       )}
-      <span className="hidden sm:inline-block text-sm italic text-green-600 font-semibold leading-tight">
-        Enabling Safer Space by Design
-      </span>
+      <div className="flex flex-col leading-tight">
+        <span className="text-2xl font-extrabold text-gray-900 tracking-tight">CPTEDINDIA</span>
+        <span className="hidden sm:block text-sm italic text-green-600 font-semibold">
+          Enabling Safer Space by Design
+        </span>
+      </div>
     </Link>
   );
 }
@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Logo />
 
