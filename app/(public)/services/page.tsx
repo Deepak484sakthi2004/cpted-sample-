@@ -91,7 +91,7 @@ export default function ServicesPage() {
       {/* Quick Nav */}
       <nav className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 overflow-x-auto">
-          <div className="flex gap-8 py-4 whitespace-nowrap text-base font-medium">
+          <div className="flex gap-8 py-4 whitespace-nowrap text-lg font-semibold">
             {[
               { label: "CPTED Consulting", href: "#cpted" },
               { label: "Risk Management", href: "#risk" },
@@ -209,7 +209,7 @@ export default function ServicesPage() {
         <PageBanner
           src="/images/risk-assessment.jpg"
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
-          className="py-16 px-4"
+          className="py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
@@ -245,7 +245,7 @@ export default function ServicesPage() {
         <PageBanner
           src="/images/iStock-3.jpg"
           overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
-          className="py-16 px-4"
+          className="py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
@@ -278,7 +278,7 @@ export default function ServicesPage() {
         <PageBanner
           src="/images/expatriate-travel.jpg"
           overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
-          className="py-16 px-4"
+          className="py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
