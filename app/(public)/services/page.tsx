@@ -88,22 +88,22 @@ export default function ServicesPage() {
       <PageBanner
         src="/images/iStock-3.jpg"
         overlayClass="bg-black/35"
-        className="py-16 px-4 text-center"
+        className="py-12 md:py-16 px-4 text-center"
       >
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-white">
             Our <span className="text-amber-400">Services</span>
           </h1>
-          <p className="text-white/80 text-lg">
+          <p className="text-white/80 text-base md:text-lg">
             Proactive safety and security solutions — from environmental design to professional certification.
           </p>
         </div>
       </PageBanner>
 
       {/* Quick Nav */}
-      <nav className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <nav className="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 overflow-x-auto">
-          <div className="flex gap-8 py-4 whitespace-nowrap text-lg font-semibold">
+          <div className="flex gap-4 md:gap-8 py-3 md:py-4 whitespace-nowrap text-base md:text-lg font-semibold">
             {[
               { label: "CPTED Consulting", href: "#cpted" },
               { label: "Risk Management", href: "#risk" },
@@ -123,26 +123,26 @@ export default function ServicesPage() {
         </div>
       </nav>
 
-      {/* ── CONSULTING: CPTED ── Type 1: Dark overlay, white floating cards */}
-      <div id="cpted" className="scroll-mt-28">
+      {/* ── CONSULTING: CPTED ── */}
+      <div id="cpted" className="scroll-mt-36">
         <PageBanner
           src="/images/consulting-workspace.jpg"
           overlayClass="bg-black/30"
-          className="py-16 px-4"
+          className="py-10 md:py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/20">
-                <Shield className="h-5 w-5 text-amber-400" />
+              <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg bg-amber-500/20">
+                <Shield className="h-4 w-4 md:h-5 md:w-5 text-amber-400" />
               </div>
-              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+              <span className="text-xs md:text-sm font-semibold text-amber-400 uppercase tracking-wide">
                 Consulting
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-8">CPTED</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">CPTED</h2>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-4 text-gray-200">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12">
+              <div className="space-y-4 text-gray-200 text-sm md:text-base">
                 <p>
                   Technologies can be defeated and sometimes the effects are recorded at a larger scale.
                   Traditional security measures are expensive and some are obsolete in recent times.
@@ -161,23 +161,23 @@ export default function ServicesPage() {
                   safety and security design.
                 </p>
                 <Link href="/contact">
-                  <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                  <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md w-full sm:w-auto">
                     Connect for a Free Consultation
                   </Button>
                 </Link>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {/* Who requires */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
-                  <h3 className="font-bold text-white mb-4">Who Requires a CPTED Audit and Certification?</h3>
-                  <p className="text-sm text-gray-300 mb-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-6">
+                  <h3 className="font-bold text-white mb-3 md:mb-4 text-sm md:text-base">Who Requires a CPTED Audit and Certification?</h3>
+                  <p className="text-xs md:text-sm text-gray-300 mb-3 md:mb-4">
                     Any space utilised by an individual or people — or where there is a presence of property and
                     process — requires a CPTED Audit and Certification. In specific:
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                     {whoRequires.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-gray-200">
+                      <li key={item} className="flex items-center gap-2 text-xs md:text-sm text-gray-200">
                         <ChevronRight className="h-3 w-3 text-amber-400 flex-shrink-0" />
                         {item}
                       </li>
@@ -186,9 +186,9 @@ export default function ServicesPage() {
                 </div>
 
                 {/* How we do it */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
-                  <h3 className="font-bold text-white mb-4">How We Do It</h3>
-                  <ol className="space-y-2 text-sm text-gray-200 list-none">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-6">
+                  <h3 className="font-bold text-white mb-3 md:mb-4 text-sm md:text-base">How We Do It</h3>
+                  <ol className="space-y-2 text-xs md:text-sm text-gray-200 list-none">
                     {[
                       "Engage in dialogue to understand the client requirement",
                       "Conduct a structured, comprehensive on-site assessment",
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ol>
-                  <p className="text-sm text-gray-300 mt-4">
+                  <p className="text-xs md:text-sm text-gray-300 mt-4">
                     Based on the final findings, CPTEDINDIA will advocate suggestions for effective change and
                     progress in cost, manpower, infrastructure, and business engagements.
                   </p>
@@ -216,24 +216,24 @@ export default function ServicesPage() {
         </PageBanner>
       </div>
 
-      {/* ── CONSULTING: RISK MANAGEMENT ── Type 2: Full-bleed, lighter overlay */}
-      <div id="risk" className="scroll-mt-28">
+      {/* ── CONSULTING: RISK MANAGEMENT ── */}
+      <div id="risk" className="scroll-mt-36">
         <PageBanner
           src="/images/risk-assessment.jpg"
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
-          className="py-16 px-4 min-h-screen flex flex-col justify-center"
+          className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
-                <AlertTriangle className="h-5 w-5 text-orange-400" />
+              <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg bg-white/15">
+                <AlertTriangle className="h-4 w-4 md:h-5 md:w-5 text-orange-400" />
               </div>
-              <span className="text-sm font-semibold text-orange-400 uppercase tracking-wide">
+              <span className="text-xs md:text-sm font-semibold text-orange-400 uppercase tracking-wide">
                 Consulting
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-8">Risk Management</h2>
-            <div className="max-w-2xl space-y-4 text-gray-200">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Risk Management</h2>
+            <div className="max-w-2xl space-y-4 text-sm md:text-base text-gray-200">
               <p>
                 CPTEDINDIA will progress with a structured way of managing possible activities that could cause
                 harm. Every sector is unique with their credentials and risk appetite — and so are the challenges.
@@ -243,7 +243,7 @@ export default function ServicesPage() {
                 can guide you to form an effective risk management framework for your firm.
               </p>
               <Link href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md w-full sm:w-auto">
                   Talk to Our Experts
                 </Button>
               </Link>
@@ -252,31 +252,31 @@ export default function ServicesPage() {
         </PageBanner>
       </div>
 
-      {/* ── CONSULTING: SECURITY PROJECTS ── Type 2: Full-bleed */}
-      <div id="security" className="scroll-mt-28">
+      {/* ── CONSULTING: SECURITY PROJECTS ── */}
+      <div id="security" className="scroll-mt-36">
         <PageBanner
           src="/images/security_mgmt.jpg"
           overlayClass="bg-black/20"
-          className="py-16 px-4 min-h-screen flex flex-col justify-center"
+          className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
-                <Lock className="h-5 w-5 text-amber-400" />
+              <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg bg-white/15">
+                <Lock className="h-4 w-4 md:h-5 md:w-5 text-amber-400" />
               </div>
-              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+              <span className="text-xs md:text-sm font-semibold text-amber-400 uppercase tracking-wide">
                 Consulting
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-8">Security Projects</h2>
-            <div className="max-w-2xl space-y-4 text-gray-200">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Security Projects</h2>
+            <div className="max-w-2xl space-y-4 text-sm md:text-base text-gray-200">
               <p>
                 CPTEDINDIA provides end-to-end advisory for security projects — from initial planning and
                 design through to implementation and review. We work with organisations to ensure security
                 infrastructure is effective, cost-efficient, and aligned with CPTED principles.
               </p>
               <Link href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md w-full sm:w-auto">
                   Enquire About a Project
                 </Button>
               </Link>
@@ -286,7 +286,7 @@ export default function ServicesPage() {
       </div>
 
       {/* ── CONSULTING: EXPATRIATE ── Full image + right services box */}
-      <div id="expatriate" className="scroll-mt-28 relative overflow-hidden min-h-screen">
+      <div id="expatriate" className="scroll-mt-36 relative overflow-hidden min-h-screen">
         <Image
           src="/images/expatriate-travel.jpg"
           alt="Expatriate Services"
@@ -294,31 +294,30 @@ export default function ServicesPage() {
           className="object-cover"
           priority
         />
-        {/* Very light tint — keeps image fully visible */}
         <div className="absolute inset-0 bg-black/20" />
 
-        <div className="relative min-h-screen flex flex-col px-4 py-12">
+        <div className="relative min-h-screen flex flex-col px-4 py-10 md:py-12">
           <div className="mx-auto max-w-7xl w-full flex flex-col flex-1">
 
             {/* Section header */}
             <div className="flex items-center gap-3 mb-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
-                <Globe className="h-5 w-5 text-green-400" />
+              <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg bg-white/15">
+                <Globe className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
               </div>
-              <span className="text-sm font-semibold text-green-400 uppercase tracking-wide">
+              <span className="text-xs md:text-sm font-semibold text-green-400 uppercase tracking-wide">
                 Consulting
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-8">Expatriate Services</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Expatriate Services</h2>
 
-            {/* Services box — anchored to the right */}
-            <div className="flex justify-end flex-1 items-center">
-              <div className="bg-white rounded-lg shadow-2xl p-8 w-80">
+            {/* Services box — full width on mobile, right-anchored on desktop */}
+            <div className="flex justify-center md:justify-end flex-1 items-center">
+              <div className="bg-white rounded-lg shadow-2xl p-5 md:p-8 w-full max-w-sm md:w-80">
                 <ul className="space-y-0">
                   {expatriateServices.map((service) => (
                     <li
                       key={service}
-                      className="py-3 border-b border-gray-100 last:border-0 text-gray-800 font-medium text-base"
+                      className="py-2.5 md:py-3 border-b border-gray-100 last:border-0 text-gray-800 font-medium text-sm md:text-base"
                     >
                       {service}
                     </li>
@@ -328,16 +327,16 @@ export default function ServicesPage() {
             </div>
 
             {/* Bottom caption + CTA */}
-            <div className="mt-auto pt-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-              <p className="text-sm text-white/90 max-w-md drop-shadow">
+            <div className="mt-auto pt-8 md:pt-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+              <p className="text-xs md:text-sm text-white/90 max-w-md drop-shadow">
                 CPTEDINDIA coordinates with Corporates and Individuals to provide a safer environment
                 for the Expat community.{" "}
                 <Link href="/contact" className="text-amber-400 hover:underline font-semibold">
                   Read More
                 </Link>
               </p>
-              <Link href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-md">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-md w-full sm:w-auto">
                   Contact Us
                 </Button>
               </Link>
@@ -347,27 +346,26 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* ── TRAINING: CPTED ── Type 1 intro + clean white cards below */}
-      <div id="training" className="scroll-mt-28">
-        {/* Training intro with background image */}
+      {/* ── TRAINING: CPTED ── */}
+      <div id="training" className="scroll-mt-36">
         <PageBanner
           src="/images/certification-hero.jpg"
           overlayClass="bg-black/30"
-          className="py-16 px-4"
+          className="py-10 md:py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/20">
-                <BookOpen className="h-5 w-5 text-amber-400" />
+              <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg bg-amber-500/20">
+                <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-amber-400" />
               </div>
-              <span className="text-sm font-semibold text-amber-400 uppercase tracking-wide">
+              <span className="text-xs md:text-sm font-semibold text-amber-400 uppercase tracking-wide">
                 Training
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-8">CPTED Certification Training</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">CPTED Certification Training</h2>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-4 text-gray-200">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12">
+              <div className="space-y-4 text-sm md:text-base text-gray-200">
                 <p>
                   Professional certifications are a medium to convey expertise and industry knowledge that would
                   boost business and attract customers in the respective domain. Industry-relevant certifications
@@ -389,25 +387,23 @@ export default function ServicesPage() {
               </div>
 
               <div className="space-y-4">
-                {/* Who Should Attend */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <Users className="h-5 w-5 text-amber-400" />
-                    <h3 className="font-bold text-white">Who Should Attend</h3>
+                    <Users className="h-4 w-4 md:h-5 md:w-5 text-amber-400" />
+                    <h3 className="font-bold text-white text-sm md:text-base">Who Should Attend</h3>
                   </div>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-xs md:text-sm text-gray-300">
                     Any individual or organisation who qualifies the criteria and is determined to prevent crime,
                     learn environmental design, create value, or seek CPTED knowledge can attend the training.
                   </p>
                 </div>
 
-                {/* Certification note */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <Award className="h-5 w-5 text-amber-400" />
-                    <h3 className="font-bold text-white">Certification</h3>
+                    <Award className="h-4 w-4 md:h-5 md:w-5 text-amber-400" />
+                    <h3 className="font-bold text-white text-sm md:text-base">Certification</h3>
                   </div>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-xs md:text-sm text-gray-300">
                     The coveted CPTED Training Certificate will be provided on successful completion of the training.
                   </p>
                 </div>
@@ -416,19 +412,19 @@ export default function ServicesPage() {
           </div>
         </PageBanner>
 
-        {/* Course tier cards — clean white section */}
-        <section className="py-16 px-4 bg-white">
+        {/* Course tier cards */}
+        <section className="py-10 md:py-16 px-4 bg-white">
           <div className="mx-auto max-w-6xl">
-            <h3 className="text-2xl font-bold text-gray-900 text-center mb-10">Choose Your Certification Path</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center mb-6 md:mb-10">Choose Your Certification Path</h3>
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
 
               {/* Tier 1 — Generic One-Day */}
-              <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
+              <div className="bg-white rounded-xl border border-gray-200 p-5 md:p-6 flex flex-col">
                 <div className="mb-4">
                   <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     Entry Level
                   </span>
-                  <h3 className="text-xl font-bold text-gray-900">Generic One-Day Training Module</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">Generic One-Day Training Module</h3>
                 </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold text-gray-700 mb-1">Requirements</p>
@@ -455,7 +451,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Tier 2 — CCA */}
-              <div className="bg-white rounded-xl border-2 border-amber-500 p-6 flex flex-col relative">
+              <div className="bg-white rounded-xl border-2 border-amber-500 p-5 md:p-6 flex flex-col relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                     CCA
@@ -465,7 +461,7 @@ export default function ServicesPage() {
                   <span className="inline-block bg-amber-50 text-amber-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     For Beginners
                   </span>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
                     CPTEDINDIA Certified CPTED Associate
                   </h3>
                 </div>
@@ -500,12 +496,12 @@ export default function ServicesPage() {
               </div>
 
               {/* Tier 3 — CCP */}
-              <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
+              <div className="bg-white rounded-xl border border-gray-200 p-5 md:p-6 flex flex-col">
                 <div className="mb-4">
                   <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     For Professionals — CCP
                   </span>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
                     CPTEDINDIA Certified CPTED Professional
                   </h3>
                 </div>
@@ -546,23 +542,23 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-gray-900 text-white text-center">
+      <section className="py-12 md:py-16 px-4 bg-gray-900 text-white text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-300 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-gray-300 mb-8 text-sm md:text-base">
             Connect with us for a free consultation or enrol in a CPTED training course today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg">
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 shadow-lg w-full sm:w-auto">
                 Free Consultation
               </Button>
             </Link>
-            <Link href="/courses">
+            <Link href="/courses" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 font-semibold px-8"
+                className="border-white text-white hover:bg-white/10 font-semibold px-8 w-full sm:w-auto"
               >
                 View Training Courses
               </Button>
