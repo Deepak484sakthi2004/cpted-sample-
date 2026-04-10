@@ -19,7 +19,7 @@ const slides = [
   },
   {
     image: "/images/risk-assessment.jpg",
-    heading: "CPTED Audit &",
+    heading: "CPTED Audit & Certification",
     headingHighlight: "",
     description:
       "We assess, advise, and certify spaces for individuals, institutions, and government bodies.",

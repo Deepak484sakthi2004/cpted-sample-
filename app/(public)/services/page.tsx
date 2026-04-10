@@ -255,7 +255,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: SECURITY PROJECTS ── Type 2: Full-bleed */}
       <div id="security" className="scroll-mt-28">
         <PageBanner
-          src="/images/iStock-3.jpg"
+          src="/images/security_mgmt.jpg"
           overlayClass="bg-black/20"
           className="py-16 px-4 min-h-screen flex flex-col justify-center"
         >
