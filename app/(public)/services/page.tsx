@@ -219,7 +219,7 @@ export default function ServicesPage() {
       {/* ── CONSULTING: RISK MANAGEMENT ── */}
       <div id="risk" className="scroll-mt-36">
         <PageBanner
-          src="/images/risk-assessment.jpg"
+          src="/images/risk-assessment-hero.jpg"
           overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
           className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >

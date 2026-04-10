@@ -17,7 +17,8 @@
       "Read(//Users/vc/Library/**)",
       "Read(//Users/vc/**)",
       "Bash(brew install:*)",
-      "Bash(grep -n \"handleToggle\\\\|revokeEnrollment\\\\|restoreEnrollment\\\\|revokeCertificate\\\\|markLessonComplete\" /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/courses/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/enrollments/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/users/[id]/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/app/courses/[courseId]/lessons/[lessonId]/page.tsx)"
+      "Bash(grep -n \"handleToggle\\\\|revokeEnrollment\\\\|restoreEnrollment\\\\|revokeCertificate\\\\|markLessonComplete\" /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/courses/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/enrollments/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/users/[id]/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/app/courses/[courseId]/lessons/[lessonId]/page.tsx)",
+      "Bash(cat:*)"
     ]
   }
 }
