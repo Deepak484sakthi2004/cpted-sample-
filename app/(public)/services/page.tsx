@@ -87,6 +87,7 @@ export default function ServicesPage() {
       {/* Page Header */}
       <PageBanner
         src="/images/iStock-3.jpg"
+        overlayClass="bg-black/35"
         className="py-16 px-4 text-center"
       >
         <div className="mx-auto max-w-3xl">
@@ -126,7 +127,7 @@ export default function ServicesPage() {
       <div id="cpted" className="scroll-mt-28">
         <PageBanner
           src="/images/consulting-workspace.jpg"
-          overlayClass="bg-gray-900/88"
+          overlayClass="bg-black/30"
           className="py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
@@ -255,7 +256,7 @@ export default function ServicesPage() {
       <div id="security" className="scroll-mt-28">
         <PageBanner
           src="/images/iStock-3.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
+          overlayClass="bg-black/20"
           className="py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
@@ -351,7 +352,7 @@ export default function ServicesPage() {
         {/* Training intro with background image */}
         <PageBanner
           src="/images/certification-hero.jpg"
-          overlayClass="bg-gray-900/88"
+          overlayClass="bg-black/30"
           className="py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
