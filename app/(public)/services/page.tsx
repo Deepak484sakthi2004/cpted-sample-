@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import PageBanner from "@/components/public/PageBanner";
 import {
@@ -60,6 +61,16 @@ const ccaAdditional = [
   "CPTED and Urban Planning",
   "Creating CPTED Design",
   "CPTED Drawings for Presentation",
+];
+
+const expatriateServices = [
+  "Property Management",
+  "Hotel Audits",
+  "Expat housing assessment",
+  "Travel and Transport Safety",
+  "Transit management",
+  "Security installations",
+  "Travel and tourism",
 ];
 
 const ccpAdditional = [
@@ -273,14 +284,22 @@ export default function ServicesPage() {
         </PageBanner>
       </div>
 
-      {/* ── CONSULTING: EXPATRIATE ── Type 2: Full-bleed */}
-      <div id="expatriate" className="scroll-mt-28">
-        <PageBanner
+      {/* ── CONSULTING: EXPATRIATE ── Full image + right services box */}
+      <div id="expatriate" className="scroll-mt-28 relative overflow-hidden min-h-screen">
+        <Image
           src="/images/expatriate-travel.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/60 to-gray-800/40"
-          className="py-16 px-4 min-h-screen flex flex-col justify-center"
-        >
-          <div className="mx-auto max-w-6xl">
+          alt="Expatriate Services"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Very light tint — keeps image fully visible */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div className="relative min-h-screen flex flex-col px-4 py-12">
+          <div className="mx-auto max-w-7xl w-full flex flex-col flex-1">
+
+            {/* Section header */}
             <div className="flex items-center gap-3 mb-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
                 <Globe className="h-5 w-5 text-green-400" />
@@ -290,20 +309,41 @@ export default function ServicesPage() {
               </span>
             </div>
             <h2 className="text-3xl font-bold text-white mb-8">Expatriate Services</h2>
-            <div className="max-w-2xl space-y-4 text-gray-200">
-              <p>
-                CPTEDINDIA offers dedicated safety and security advisory for expatriates and international
-                organisations operating in India. We help navigate local security landscapes, assess risk
-                exposures, and implement practical safety measures tailored to the expatriate context.
+
+            {/* Services box — anchored to the right */}
+            <div className="flex justify-end flex-1 items-center">
+              <div className="bg-white rounded-lg shadow-2xl p-8 w-80">
+                <ul className="space-y-0">
+                  {expatriateServices.map((service) => (
+                    <li
+                      key={service}
+                      className="py-3 border-b border-gray-100 last:border-0 text-gray-800 font-medium text-base"
+                    >
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom caption + CTA */}
+            <div className="mt-auto pt-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+              <p className="text-sm text-white/90 max-w-md drop-shadow">
+                CPTEDINDIA coordinates with Corporates and Individuals to provide a safer environment
+                for the Expat community.{" "}
+                <Link href="/contact" className="text-amber-400 hover:underline font-semibold">
+                  Read More
+                </Link>
               </p>
               <Link href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold mt-2 shadow-md">
+                <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-md">
                   Contact Us
                 </Button>
               </Link>
             </div>
+
           </div>
-        </PageBanner>
+        </div>
       </div>
 
       {/* ── TRAINING: CPTED ── Type 1 intro + clean white cards below */}
