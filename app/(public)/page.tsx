@@ -69,9 +69,9 @@ export default async function HomePage() {
             {benefits.map(({ icon: Icon, title, description }) => (
               <div
                 key={title}
-                className="bg-gray-900 rounded-xl p-6 text-center hover:shadow-md transition-shadow"
+                className="bg-gray-900 rounded-xl p-6 text-left hover:shadow-md transition-shadow"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20">
                   <Icon className="h-6 w-6 text-amber-400" />
                 </div>
                 <h3 className="font-bold text-white text-xl mb-2">{title}</h3>

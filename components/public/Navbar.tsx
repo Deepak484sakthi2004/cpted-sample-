@@ -57,7 +57,7 @@ export default function Navbar() {
               <Link
                 key={label}
                 href={href}
-                className="text-sm font-medium text-gray-600 hover:text-amber-500 transition-colors"
+                className="text-base font-semibold text-gray-600 hover:text-amber-500 transition-colors"
               >
                 {label}
               </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <Link
                   key={label}
                   href={href}
-                  className="text-sm font-medium text-gray-600 hover:text-amber-500"
+                  className="text-base font-semibold text-gray-600 hover:text-amber-500"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}

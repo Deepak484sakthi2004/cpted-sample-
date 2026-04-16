@@ -220,7 +220,8 @@ export default function ServicesPage() {
       <div id="risk" className="scroll-mt-36">
         <PageBanner
           src="/images/risk-assessment-hero.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-800/75"
+          overlayClass="bg-gradient-to-r from-gray-900/80 to-gray-900/20"
+          imageClass="object-[center_25%]"
           className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
@@ -256,7 +257,8 @@ export default function ServicesPage() {
       <div id="security" className="scroll-mt-36">
         <PageBanner
           src="/images/security_mgmt.jpg"
-          overlayClass="bg-black/20"
+          overlayClass="bg-gradient-to-r from-gray-900/75 to-gray-900/15"
+          imageClass="object-[center_25%]"
           className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
@@ -312,12 +314,12 @@ export default function ServicesPage() {
 
             {/* Services box — full width on mobile, right-anchored on desktop */}
             <div className="flex justify-center md:justify-end flex-1 items-center">
-              <div className="bg-white rounded-lg shadow-2xl p-5 md:p-8 w-full max-w-sm md:w-80">
+              <div className="bg-blue-900 rounded-lg shadow-2xl p-5 md:p-8 w-full max-w-sm md:w-80">
                 <ul className="space-y-0">
                   {expatriateServices.map((service) => (
                     <li
                       key={service}
-                      className="py-2.5 md:py-3 border-b border-gray-100 last:border-0 text-gray-800 font-medium text-sm md:text-base"
+                      className="py-2.5 md:py-3 border-b border-white/20 last:border-0 text-white font-medium text-sm md:text-base"
                     >
                       {service}
                     </li>

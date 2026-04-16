@@ -9,6 +9,8 @@ interface PageBannerProps {
   className?: string;
   /** Tailwind class(es) for the overlay div — controls darkness/direction of the tint */
   overlayClass?: string;
+  /** Tailwind class(es) for the Image element — e.g. object-position adjustments */
+  imageClass?: string;
 }
 
 /**
@@ -21,6 +23,7 @@ export default function PageBanner({
   children,
   className = "",
   overlayClass = "bg-gradient-to-r from-gray-900/92 to-gray-800/80",
+  imageClass = "",
 }: PageBannerProps) {
   const [error, setError] = useState(false);
 
@@ -32,7 +35,7 @@ export default function PageBanner({
             src={src}
             alt=""
             fill
-            className="object-cover"
+            className={`object-cover ${imageClass}`}
             priority
             onError={() => setError(true)}
           />

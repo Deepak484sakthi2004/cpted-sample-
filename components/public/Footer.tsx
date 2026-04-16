@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-gray-400">
-              Proactive crime prevention through environmental design, risk management, and professional certification across India.
+              Proactive crime prevention through environmental design, risk management, and professional certification.
             </p>
           </div>
           <div>

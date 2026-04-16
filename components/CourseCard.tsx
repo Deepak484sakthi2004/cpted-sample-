@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { getLevelColor, formatCurrency } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
 import { BookOpen } from "lucide-react";
 
 interface CourseCardProps {
@@ -38,7 +37,7 @@ export default function CourseCard({
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
       {/* Thumbnail */}
-      <div className="relative h-40 bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0">
+      <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0">
         {thumbnail ? (
           <Image src={thumbnail} alt={title} fill className="object-cover" />
         ) : (
@@ -50,7 +49,7 @@ export default function CourseCard({
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-2 mb-2">
+        <div className="mb-2">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -59,9 +58,6 @@ export default function CourseCard({
               <TooltipContent className="max-w-xs">{title}</TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <Badge className={`text-xs flex-shrink-0 ${getLevelColor(level)}`}>
-            {level.charAt(0) + level.slice(1).toLowerCase()}
-          </Badge>
         </div>
 
         {shortDescription && (

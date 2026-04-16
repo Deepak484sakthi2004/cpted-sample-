@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import CourseCard from "@/components/CourseCard";
 import EmptyState from "@/components/EmptyState";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { getPublishedCourses } from "@/lib/actions/courses";
 import { Search, BookOpen } from "lucide-react";
 import PageBanner from "@/components/public/PageBanner";
@@ -19,12 +18,9 @@ type Course = {
   slug: string;
 };
 
-const LEVELS = ["ALL", "BEGINNER", "INTERMEDIATE", "ADVANCED"];
-
 export default function CoursesPage() {
   const [allCourses, setAllCourses] = useState<Course[]>([]);
   const [search, setSearch] = useState("");
-  const [level, setLevel] = useState("ALL");
 
   useEffect(() => {
     getPublishedCourses().then((courses) =>
@@ -42,11 +38,9 @@ export default function CoursesPage() {
     );
   }, []);
 
-  const filtered = allCourses.filter((c) => {
-    const matchesSearch = c.title.toLowerCase().includes(search.toLowerCase());
-    const matchesLevel = level === "ALL" || c.level === level;
-    return matchesSearch && matchesLevel;
-  });
+  const filtered = allCourses.filter((c) =>
+    c.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -65,8 +59,8 @@ export default function CoursesPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-10">
         {/* Filters */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <div className="relative flex-1">
+        <div className="mb-8">
+          <div className="relative max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               placeholder="Search courses..."
@@ -74,19 +68,6 @@ export default function CoursesPage() {
               onChange={(e) => setSearch(e.target.value)}
               className="pl-9"
             />
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {LEVELS.map((l) => (
-              <Button
-                key={l}
-                size="sm"
-                variant={level === l ? "default" : "outline"}
-                onClick={() => setLevel(l)}
-                className={level === l ? "bg-amber-500 hover:bg-amber-400 text-white font-semibold border-amber-500" : ""}
-              >
-                {l === "ALL" ? "All Levels" : l.charAt(0) + l.slice(1).toLowerCase()}
-              </Button>
-            ))}
           </div>
         </div>
 

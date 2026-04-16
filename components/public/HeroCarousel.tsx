@@ -43,7 +43,7 @@ const slides = [
 ];
 
 const DRAG_THRESHOLD = 50;
-const AUTO_PLAY_INTERVAL = 5000;
+const AUTO_PLAY_INTERVAL = 8000;
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
@@ -112,7 +112,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-[560px] flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
+      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-[85vh] flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -125,7 +125,7 @@ export default function HeroCarousel() {
             src={slide.image}
             alt=""
             fill
-            className="object-cover"
+            className="object-cover object-[center_25%]"
             priority={current === 0}
             draggable={false}
             onError={() =>

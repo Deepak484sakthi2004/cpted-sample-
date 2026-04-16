@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import PageBanner from "@/components/public/PageBanner";
-import { BookOpen, Target, Users, Award, Globe, Shield } from "lucide-react";
+import { Target, Users, Award, Shield } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,13 +29,13 @@ export default function AboutPage() {
       {/* Mission — Type 3: frosted glass card over full-bleed image */}
       <PageBanner
           src="/images/team-collaboration.jpg"
-        overlayClass="bg-gradient-to-r from-gray-900/80 to-gray-900/25"
+        overlayClass="bg-gradient-to-r from-gray-900/85 via-gray-900/40 to-transparent"
         className="py-16 px-4"
       >
         <div className="mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Frosted glass card — left */}
-            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div className="grid md:grid-cols-4 gap-12 items-center">
+            {/* Frosted glass card — left (1/4 width) */}
+            <div className="md:col-span-1 bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Our Mission
               </h2>
@@ -58,19 +58,19 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Right side — image shows through the lighter overlay */}
-            <div />
+            {/* Right side — image shows through the lighter overlay (3/4 width) */}
+            <div className="md:col-span-3" />
           </div>
         </div>
       </PageBanner>
 
       {/* Values */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-blue-900">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             What We Stand For
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
                 icon: Target,
@@ -95,54 +95,15 @@ export default function AboutPage() {
             ].map(({ icon: Icon, label, desc }) => (
               <div
                 key={label}
-                className="bg-white rounded-xl border border-gray-200 p-5 text-center hover:shadow-md transition-shadow"
+                className="bg-blue-800/50 rounded-xl border border-white/20 p-5 text-center hover:shadow-md transition-shadow"
               >
-                <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
-                  <Icon className="h-5 w-5 text-amber-500" />
+                <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-amber-500/20">
+                  <Icon className="h-5 w-5 text-amber-400" />
                 </div>
-                <p className="font-semibold text-sm text-gray-900 mb-1">
+                <p className="font-semibold text-sm text-white mb-1">
                   {label}
                 </p>
-                <p className="text-xs text-gray-500">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What we offer */}
-      <section className="py-16 px-4 bg-white">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            What We Offer
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "CPTED Consulting",
-                desc: "On-site assessments, audits, and certifications for residential, institutional, government, and commercial spaces.",
-              },
-              {
-                icon: Globe,
-                title: "Risk & Security Advisory",
-                desc: "Structured risk management frameworks and end-to-end security project consulting tailored to your sector.",
-              },
-              {
-                icon: BookOpen,
-                title: "Professional Training",
-                desc: "Earn CCA or CCP certifications through customised training modules that add real value to your organisation.",
-              },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-gray-900 rounded-xl p-6"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20 mb-4">
-                  <Icon className="h-6 w-6 text-amber-400" />
-                </div>
-                <h3 className="font-bold text-white text-lg mb-2">{title}</h3>
-                <p className="text-base text-gray-300">{desc}</p>
+                <p className="text-xs text-gray-200">{desc}</p>
               </div>
             ))}
           </div>
