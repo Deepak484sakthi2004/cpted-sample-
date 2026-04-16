@@ -29,37 +29,33 @@ export default function AboutPage() {
       {/* Mission — Type 3: frosted glass card over full-bleed image */}
       <PageBanner
           src="/images/team-collaboration.jpg"
-        overlayClass="bg-gradient-to-r from-gray-900/85 via-gray-900/40 to-transparent"
-        className="py-16 px-4"
+        overlayClass="bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"
+        className="py-16 md:py-24 px-4"
       >
-        <div className="mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-4 gap-12 items-center">
-            {/* Frosted glass card — left (1/4 width) */}
-            <div className="md:col-span-1 bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <div className="mx-auto max-w-7xl">
+          <div className="md:max-w-[45%]">
+            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Our Mission
               </h2>
-              <p className="text-gray-200 mb-4">
+              <p className="text-gray-200 mb-4 leading-relaxed">
                 CPTEDINDIA was established to bring proactive Crime Prevention
                 Through Environmental Design (CPTED) methodologies to
                 individuals, institutions, and government bodies across India.
               </p>
-              <p className="text-gray-200 mb-4">
+              <p className="text-gray-200 mb-4 leading-relaxed">
                 We believe safety should be designed in — not bolted on.
                 Technologies can be defeated; traditional security measures
                 are expensive and some are obsolete. A combination of CPTED
                 and security devices is the perfect answer to balance present
                 and future security risks.
               </p>
-              <p className="text-gray-200">
+              <p className="text-gray-200 leading-relaxed">
                 From CPTED audits and risk frameworks to professional
                 certifications (CCA &amp; CCP), we provide end-to-end safety
                 solutions for every sector.
               </p>
             </div>
-
-            {/* Right side — image shows through the lighter overlay (3/4 width) */}
-            <div className="md:col-span-3" />
           </div>
         </div>
       </PageBanner>
