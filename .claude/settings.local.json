@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"1774777692384blob.jpg\" \"cpted-safe-space-banner.jpg\")",
+      "Bash(mv \"cpted_new_logo .jpg\" \"logo-ci.jpg\")",
+      "Bash(mv \"ISO LOGO PNG.png\" \"iso-certified.png\")",
+      "Bash(mv \"iStock-1210537786.jpg\" \"expatriate-travel.jpg\")",
+      "Bash(mv \"iStock-2148604076.jpg\" \"team-collaboration.jpg\")",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)",
+      "Bash(git:*)",
+      "Bash(git add:*)",
+      "Read(//usr/local/bin/**)",
+      "Bash(command -v brew)",
+      "Read(//Users/vc/Library/**)",
+      "Read(//Users/vc/**)",
+      "Bash(brew install:*)",
+      "Bash(grep -n \"handleToggle\\\\|revokeEnrollment\\\\|restoreEnrollment\\\\|revokeCertificate\\\\|markLessonComplete\" /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/courses/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/enrollments/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/admin/users/[id]/page.tsx /Users/vc/Downloads/cptelIndia/cpted-sample-/app/app/courses/[courseId]/lessons/[lessonId]/page.tsx)",
+      "Bash(cat:*)"
+    ]
+  }
+}

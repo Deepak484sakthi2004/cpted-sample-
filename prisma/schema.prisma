@@ -1,0 +1,222 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                 String           @id @default(cuid())
+  name               String
+  username           String           @unique
+  email              String           @unique
+  password           String
+  role               Role             @default(STUDENT)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  certificates       Certificate[]
+  grantedEnrollments Enrollment[]     @relation("GrantedBy")
+  enrollments        Enrollment[]
+  lessonProgress     LessonProgress[]
+  notes              Note[]
+  orders             Order[]
+  quizAttempts       QuizAttempt[]
+}
+
+model Course {
+  id                String        @id @default(cuid())
+  title             String
+  slug              String        @unique
+  shortDescription  String?
+  fullDescription   String?
+  price             Float         @default(0)
+  level             Level         @default(BEGINNER)
+  estimatedDuration String?
+  tags              String[]
+  thumbnail         String?
+  featured          Boolean       @default(false)
+  published         Boolean       @default(false)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  certificates      Certificate[]
+  enrollments       Enrollment[]
+  modules           Module[]
+  notes             Note[]
+  orders            Order[]
+}
+
+model Module {
+  id        String   @id @default(cuid())
+  courseId  String
+  title     String
+  order     Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lessons   Lesson[]
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  quiz      Quiz?
+}
+
+model Lesson {
+  id        String           @id @default(cuid())
+  moduleId  String
+  title     String
+  content   String?
+  order     Int
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  module    Module           @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress  LessonProgress[]
+}
+
+model Quiz {
+  id        String        @id @default(cuid())
+  moduleId  String        @unique
+  title     String
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  questions Question[]
+  module    Module        @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  attempts  QuizAttempt[]
+}
+
+model Question {
+  id            String       @id @default(cuid())
+  quizId        String
+  text          String
+  optionA       String
+  optionB       String
+  optionC       String
+  optionD       String
+  correctAnswer String
+  explanation   String?
+  order         Int
+  quiz          Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers       QuizAnswer[]
+}
+
+model QuizAttempt {
+  id        String       @id @default(cuid())
+  userId    String
+  quizId    String
+  score     Float
+  grade     String
+  passed    Boolean
+  createdAt DateTime     @default(now())
+  answers   QuizAnswer[]
+  quiz      Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model QuizAnswer {
+  id             String      @id @default(cuid())
+  attemptId      String
+  questionId     String
+  selectedAnswer String
+  isCorrect      Boolean
+  attempt        QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question       Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model LessonProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  lessonId    String
+  completedAt DateTime @default(now())
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model Enrollment {
+  id          String           @id @default(cuid())
+  userId      String
+  courseId    String
+  status      EnrollmentStatus @default(ACTIVE)
+  grantedById String?
+  completedAt DateTime?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  course      Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  grantedBy   User?            @relation("GrantedBy", fields: [grantedById], references: [id])
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  userId    String
+  courseId  String
+  amount    Float       @default(0)
+  status    OrderStatus @default(PROVISIONED)
+  notes     String?
+  createdAt DateTime    @default(now())
+  course    Course      @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Certificate {
+  id                String   @id @default(cuid())
+  userId            String
+  courseId          String
+  certificateNumber String   @unique
+  issuedAt          DateTime @default(now())
+  course            Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  courseId  String
+  content   String?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model EmailTemplate {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  subject   String
+  body      String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum Level {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum EnrollmentStatus {
+  ACTIVE
+  REVOKED
+}
+
+enum OrderStatus {
+  PROVISIONED
+}
