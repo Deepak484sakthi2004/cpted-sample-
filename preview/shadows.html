@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:28px;background:#F5F5F3;font-family:var(--font-sans)}
+  .row{display:flex;gap:24px}
+  .card{flex:1;background:#fff;border-radius:6px;border:1px solid #E5E7EB;padding:18px;font-size:11px;color:#6b7280;font-family:var(--font-mono)}
+  .card b{display:block;color:#0B2545;font-family:var(--font-sans);font-size:13px;margin-bottom:4px}
+</style></head><body>
+<div class="row">
+  <div class="card"><b>none</b>resting state default</div>
+  <div class="card" style="box-shadow:0 1px 2px 0 rgb(11 37 69 / 0.06)"><b>sm</b>cards at rest</div>
+  <div class="card" style="box-shadow:0 2px 8px -2px rgb(11 37 69 / 0.1), 0 1px 3px rgb(11 37 69 / 0.06)"><b>md</b>hover / elevated</div>
+  <div class="card" style="box-shadow:0 12px 28px -8px rgb(11 37 69 / 0.18), 0 2px 6px rgb(11 37 69 / 0.06)"><b>lg</b>dropdowns, modals</div>
+</div>
+<div style="font-size:12px;color:#6B7280;margin-top:16px">Navy-tinted shadows, never pure black. No colored "brand glow" shadows — they read as consumer-SaaS, not professional.</div>
+</body></html>

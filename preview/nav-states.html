@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Nav States</title>
+<style>body{margin:0;padding:24px;background:#fff;font-family:"Inter",-apple-system,sans-serif}
+.wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{padding:16px;border-radius:6px}
+.light{background:#fff;border:1px solid #E5E7EB}
+.dark{background:#0B2545}
+.item{display:flex;align-items:center;gap:12px;padding:9px 14px;border-radius:4px;font-size:14px;font-weight:500;margin-bottom:2px;position:relative}
+.light .rest{color:#4B5563}
+.light .active{color:#0B2545;font-weight:600;background:#F5F5F3}
+.light .active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#B08A3E;border-radius:2px}
+.dark .rest{color:#BCC5D3}
+.dark .active{background:rgba(255,255,255,.08);color:#fff;font-weight:600}
+.dark .active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#C9A24F;border-radius:2px}
+.dot{width:16px;height:16px;border-radius:3px;background:currentColor;opacity:.4}
+.h{font-size:10px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;font-weight:600}
+.dark .h{color:#7A8599}
+</style></head><body>
+<div class="wrap">
+  <div class="panel light">
+    <div class="h">Student portal · light</div>
+    <div class="item active"><span class="dot"></span>Dashboard</div>
+    <div class="item rest"><span class="dot"></span>My Programmes</div>
+    <div class="item rest"><span class="dot"></span>Certificates</div>
+  </div>
+  <div class="panel dark">
+    <div class="h">Admin console · dark</div>
+    <div class="item active"><span class="dot"></span>Overview</div>
+    <div class="item rest"><span class="dot"></span>Programmes</div>
+    <div class="item rest"><span class="dot"></span>Students</div>
+  </div>
+</div>
+<div style="font-size:12px;color:#6B7280;margin-top:14px">Gold rule marks the active item — a quieter convention than full-fill active states.</div>
+</body></html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><title>CPTED India — Administrative Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-sans);color:#1F2937;background:#F5F5F3;display:flex;min-height:100vh;font-size:14px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+
+  /* Dark navy sidebar */
+  .side{width:256px;background:#0B2545;color:#BCC5D3;display:flex;flex-direction:column;flex-shrink:0}
+  .side .brand{padding:20px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px}
+  .side .brand .mark{width:42px;height:42px;border-radius:4px;object-fit:cover;display:block;flex-shrink:0;background:#fff;padding:2px}
+  .side .brand .word{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:16px;line-height:1.1;color:#fff}
+  .side .brand .tag{font-size:9px;color:#C9A24F;font-weight:600;text-transform:uppercase;letter-spacing:.16em;margin-top:4px}
+  .side .section-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#7A8599;padding:20px 20px 10px;font-weight:600}
+  .side nav{padding:0 12px}
+  .side nav a{display:flex;align-items:center;gap:12px;padding:9px 14px;color:#BCC5D3;font-size:13.5px;font-weight:500;text-decoration:none;margin-bottom:1px;position:relative}
+  .side nav a:hover{background:rgba(255,255,255,.04);color:#fff}
+  .side nav a.active{background:rgba(255,255,255,.06);color:#fff;font-weight:600}
+  .side nav a.active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#C9A24F}
+  .side nav a svg{width:16px;height:16px;stroke-width:1.75}
+  .side nav a .count{margin-left:auto;font-size:11px;color:#7A8599;font-weight:500}
+  .side nav a.active .count{color:#C9A24F}
+  .side .foot{margin-top:auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px}
+  .side .foot .avatar{width:36px;height:36px;background:#C9A24F;color:#0B2545;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;font-family:"Newsreader",Georgia,serif}
+  .side .foot .name{font-size:13px;font-weight:600;color:#fff}
+  .side .foot .role{font-size:10px;color:#C9A24F;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-top:2px}
+
+  /* Main */
+  .main{flex:1;display:flex;flex-direction:column;min-width:0}
+  .top{height:64px;background:#fff;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+  .top .crumbs{font-size:12px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em}
+  .top .crumbs .sep{margin:0 10px;color:#D1D5DB}
+  .top .crumbs .cur{color:#0B2545;font-weight:600}
+  .top .actions{display:flex;gap:10px;align-items:center}
+
+  .content{flex:1;padding:40px;overflow:auto}
+
+  .page-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px}
+  .page-head .eyebrow{font-size:11px;color:#B08A3E;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-bottom:8px}
+  .page-head h1{font-family:"Newsreader",Georgia,serif;font-size:2rem;font-weight:500;margin:0 0 4px 0;color:#0B2545;letter-spacing:-.01em}
+  .page-head p{color:#6B7280;margin:0;font-size:13px}
+  .pills{display:flex;gap:0;border:1px solid #E5E7EB;background:#fff}
+  .pill{padding:7px 16px;border:0;background:#fff;font-size:12px;font-weight:500;color:#6B7280;cursor:pointer;border-right:1px solid #E5E7EB}
+  .pill:last-child{border-right:0}
+  .pill.active{background:#0B2545;color:#fff}
+
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:32px}
+  .kpi{background:#fff;border:1px solid #E5E7EB;padding:24px}
+  .kpi .lbl{font-size:10px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+  .kpi .lbl svg{width:14px;height:14px;color:#B08A3E}
+  .kpi .num{font-family:"Newsreader",Georgia,serif;font-size:2.25rem;font-weight:500;color:#0B2545;line-height:1;letter-spacing:-.01em}
+  .kpi .foot{margin-top:14px;padding-top:12px;border-top:1px solid #F3F4F6;display:flex;justify-content:space-between;align-items:center;font-size:11px}
+  .kpi .foot .ch{color:#16624A;font-weight:600}
+  .kpi .foot .ch.d{color:#9B2C2C}
+  .kpi .foot .sub{color:#9CA3AF}
+
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+
+  .panel{background:#fff;border:1px solid #E5E7EB;overflow:hidden}
+  .panel-head{padding:18px 24px;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between}
+  .panel-head h3{font-family:"Newsreader",Georgia,serif;font-size:1.0625rem;font-weight:600;margin:0;color:#0B2545}
+  .panel-head .h-right{display:flex;gap:8px}
+
+  table{width:100%;border-collapse:collapse}
+  th{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#9CA3AF;text-align:left;padding:12px 24px;background:#F5F5F3;font-weight:600;border-bottom:1px solid #E5E7EB}
+  th:last-child,td:last-child{text-align:right}
+  td{padding:16px 24px;font-size:13.5px;border-bottom:1px solid #F3F4F6}
+  tr:last-child td{border:0}
+  tr:hover td{background:#FAFAF8}
+  .u{display:flex;align-items:center;gap:12px}
+  .u .av{width:32px;height:32px;background:#0B2545;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;font-family:"Newsreader",Georgia,serif}
+  .u .nm{font-weight:600;color:#0B2545;font-size:13.5px}
+  .u .em{font-size:11.5px;color:#9CA3AF;margin-top:1px}
+  .prog-col{display:flex;align-items:center;gap:10px}
+  .prog-col .bar{width:64px;height:3px;background:#F3F4F6;overflow:hidden}
+  .prog-col .bar>div{height:100%;background:#B08A3E}
+  .prog-col .v{font-size:11px;color:#6B7280;font-weight:500;min-width:28px}
+  .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .badge.a{background:#E6F0EC;color:#16624A}
+  .badge.p{background:#F5F5F3;color:#4B5563;border:1px solid #E5E7EB}
+
+  .act{padding:16px 24px;border-bottom:1px solid #F3F4F6;display:flex;gap:14px}
+  .act:last-child{border:0}
+  .act .stamp{font-family:"Newsreader",Georgia,serif;font-size:11px;color:#B08A3E;font-weight:500;width:52px;flex-shrink:0;padding-top:2px;letter-spacing:.04em}
+  .act .body p{margin:0 0 3px 0;font-size:13px;color:#1F2937;line-height:1.5}
+  .act .body p strong{color:#0B2545;font-weight:600}
+  .act .body .sub{font-size:11px;color:#9CA3AF}
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <div class="brand">
+    <img class="mark" src="../../assets/logo-ci.jpg" alt="CPTED India">
+    <div>
+      <div class="word">CPTED India</div>
+      <div class="tag">Administrative Console</div>
+    </div>
+  </div>
+
+  <div class="section-lbl">Overview</div>
+  <nav>
+    <a href="#" class="active"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+    <a href="#"><i data-lucide="bar-chart-3"></i>Analytics</a>
+    <a href="#"><i data-lucide="file-text"></i>Reports</a>
+  </nav>
+
+  <div class="section-lbl">Academic</div>
+  <nav>
+    <a href="#"><i data-lucide="book-open"></i>Programmes<span class="count">7</span></a>
+    <a href="#"><i data-lucide="clipboard-list"></i>Modules<span class="count">48</span></a>
+    <a href="#"><i data-lucide="award"></i>Credentials<span class="count">182</span></a>
+  </nav>
+
+  <div class="section-lbl">People</div>
+  <nav>
+    <a href="#"><i data-lucide="users"></i>Students<span class="count">247</span></a>
+    <a href="#"><i data-lucide="user-check"></i>Faculty<span class="count">12</span></a>
+    <a href="#"><i data-lucide="mail"></i>Enquiries<span class="count">34</span></a>
+  </nav>
+
+  <div class="section-lbl">Administration</div>
+  <nav>
+    <a href="#"><i data-lucide="indian-rupee"></i>Finance</a>
+    <a href="#"><i data-lucide="settings"></i>Settings</a>
+    <a href="#"><i data-lucide="shield"></i>Access control</a>
+  </nav>
+
+  <div class="foot">
+    <div class="avatar">AS</div>
+    <div>
+      <div class="name">Anita Singh</div>
+      <div class="role">Registrar</div>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="top">
+    <div class="crumbs">Administration <span class="sep">/</span> Overview <span class="sep">/</span> <span class="cur">Dashboard</span></div>
+    <div class="actions">
+      <button class="btn btn-outline btn-sm"><i data-lucide="download" style="width:13px;height:13px;margin-right:6px"></i>Export</button>
+      <button class="btn btn-primary btn-sm"><i data-lucide="plus" style="width:13px;height:13px;margin-right:6px"></i>New programme</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Reporting period · 25 Mar — 24 Apr 2026</div>
+        <h1>Administrative overview</h1>
+        <p>Platform activity and enrolment across seven active programmes.</p>
+      </div>
+      <div class="pills">
+        <button class="pill">7 days</button>
+        <button class="pill active">30 days</button>
+        <button class="pill">90 days</button>
+        <button class="pill">Year</button>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="lbl">Active students <i data-lucide="users"></i></div>
+        <div class="num">247</div>
+        <div class="foot"><span class="ch">+12% vs prior</span><span class="sub">215 last period</span></div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Credentials issued <i data-lucide="award"></i></div>
+        <div class="num">38</div>
+        <div class="foot"><span class="ch">+4</span><span class="sub">This period</span></div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Fee receipts <i data-lucide="indian-rupee"></i></div>
+        <div class="num">₹2.4L</div>
+        <div class="foot"><span class="ch">+18%</span><span class="sub">₹2.03L prior</span></div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Open enquiries <i data-lucide="mail"></i></div>
+        <div class="num">34</div>
+        <div class="foot"><span class="ch d">−4%</span><span class="sub">Avg 2.1 days to respond</span></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent enrolments</h3>
+          <div class="h-right"><a href="#" style="font-size:12px;color:#0B2545;text-decoration:none;border-bottom:1px solid #B08A3E;padding-bottom:1px">View roster</a></div>
+        </div>
+        <table>
+          <thead><tr><th>Student</th><th>Programme</th><th>Progress</th><th>Status</th><th>Enrolled</th></tr></thead>
+          <tbody>
+            <tr><td><div class="u"><div class="av">RK</div><div><div class="nm">Rahul Kumar</div><div class="em">rahul.k@email.com</div></div></div></td><td>CPTED Certified Associate</td><td><div class="prog-col"><div class="bar"><div style="width:62%"></div></div><span class="v">62%</span></div></td><td><span class="badge a">Active</span></td><td style="color:#6B7280">22 Apr</td></tr>
+            <tr><td><div class="u"><div class="av">PM</div><div><div class="nm">Priya Mehta</div><div class="em">priya.m@kpmg.co.in</div></div></div></td><td>Certified Practitioner</td><td><div class="prog-col"><div class="bar"><div style="width:14%"></div></div><span class="v">14%</span></div></td><td><span class="badge a">Active</span></td><td style="color:#6B7280">21 Apr</td></tr>
+            <tr><td><div class="u"><div class="av">AS</div><div><div class="nm">Arjun Shah</div><div class="em">a.shah@iisc.ac.in</div></div></div></td><td>Risk Management</td><td><div class="prog-col"><div class="bar"><div style="width:0%"></div></div><span class="v">—</span></div></td><td><span class="badge p">Pending</span></td><td style="color:#6B7280">20 Apr</td></tr>
+            <tr><td><div class="u"><div class="av">NV</div><div><div class="nm">Neha Verma</div><div class="em">nverma@ksp.gov.in</div></div></div></td><td>CPTED Certified Associate</td><td><div class="prog-col"><div class="bar"><div style="width:8%"></div></div><span class="v">8%</span></div></td><td><span class="badge a">Active</span></td><td style="color:#6B7280">19 Apr</td></tr>
+            <tr><td><div class="u"><div class="av">VT</div><div><div class="nm">Vikram Tandon</div><div class="em">v.tandon@tata.com</div></div></div></td><td>Site Audit Fundamentals</td><td><div class="prog-col"><div class="bar"><div style="width:42%"></div></div><span class="v">42%</span></div></td><td><span class="badge a">Active</span></td><td style="color:#6B7280">18 Apr</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h3>Activity log</h3></div>
+        <div class="act">
+          <div class="stamp">09:14</div>
+          <div class="body"><p><strong>Rahul Kumar</strong> completed Module 3.</p><div class="sub">CCA · Assessment score 88/100</div></div>
+        </div>
+        <div class="act">
+          <div class="stamp">08:32</div>
+          <div class="body"><p>Enquiry received from <strong>Government of Karnataka</strong>.</p><div class="sub">Public-sector audit · assigned to A. Singh</div></div>
+        </div>
+        <div class="act">
+          <div class="stamp">Yest.</div>
+          <div class="body"><p><strong>Priya Mehta</strong> enrolled in CCP.</p><div class="sub">Payment received · ₹42,000</div></div>
+        </div>
+        <div class="act">
+          <div class="stamp">23 Apr</div>
+          <div class="body"><p><strong>A. Singh</strong> published Risk Appetite v2.</p><div class="sub">Module 2 · 6 lessons revised</div></div>
+        </div>
+        <div class="act">
+          <div class="stamp">22 Apr</div>
+          <div class="body"><p>Credential issued to <strong>Meera Iyer</strong>.</p><div class="sub">CCA · Certificate no. CI-2026-0238</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --navy:#0B2545; --navy-d:#081A34;
+    --gold:#B08A3E; --gold-d:#95732F; --gold-l:#C9A24F;
+    --line:#E5E7EB; --soft:#F5F5F3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px;background:#fff;font-family:var(--font-sans);color:#1F2937}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .block{}
+  .lbl{font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-weight:600;margin-bottom:12px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+  /* -- Reset native -- */
+  .btn-x{
+    font-family:inherit;cursor:pointer;
+    border:0;outline:0;background:none;
+    display:inline-flex;align-items:center;gap:8px;
+    text-decoration:none;letter-spacing:.01em;
+    transition:background .15s,color .15s,border-color .15s,transform .08s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn-x:active{transform:translateY(1px)}
+  .btn-x svg{width:14px;height:14px;stroke-width:2}
+
+  /* -- Primary: navy with gold underline on hover (institutional) -- */
+  .b-primary{
+    background:var(--navy);color:#fff;
+    font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:13px 22px;position:relative;
+  }
+  .b-primary::after{
+    content:"";position:absolute;left:22px;right:22px;bottom:9px;
+    height:1px;background:var(--gold);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .b-primary:hover{background:var(--navy-d)}
+  .b-primary:hover::after{transform:scaleX(1)}
+
+  /* -- Gold CTA -- */
+  .b-cta{
+    background:var(--gold);color:#fff;
+    font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:13px 22px;
+  }
+  .b-cta:hover{background:var(--gold-d)}
+
+  /* -- Secondary: hairline outline -- */
+  .b-outline{
+    background:#fff;color:var(--navy);
+    border:1px solid var(--navy);
+    font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:12px 21px;
+  }
+  .b-outline:hover{background:var(--navy);color:#fff}
+
+  /* -- Ghost / tertiary: text with gold underline arrow -- */
+  .b-ghost{
+    color:var(--navy);
+    font-size:13px;font-weight:500;
+    padding:6px 0;border-bottom:1px solid var(--gold);
+  }
+  .b-ghost:hover{color:var(--gold)}
+
+  /* -- Link (serif-italic accent) -- */
+  .b-link{
+    color:var(--navy);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:15px;font-style:italic;font-weight:500;
+    padding:0;border-bottom:1px solid currentColor;
+    letter-spacing:0;text-transform:none;
+  }
+  .b-link:hover{color:var(--gold)}
+
+  /* -- On-dark surface -- */
+  .dark{background:var(--navy);padding:20px;color:#fff}
+  .b-primary-on-dark{
+    background:var(--gold);color:#fff;
+    font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:13px 22px;
+  }
+  .b-primary-on-dark:hover{background:var(--gold-d)}
+  .b-outline-on-dark{
+    background:transparent;color:#fff;
+    border:1px solid rgba(255,255,255,.5);
+    font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:12px 21px;
+  }
+  .b-outline-on-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+  /* -- Icon buttons -- */
+  .b-icon{
+    width:36px;height:36px;border:1px solid var(--line);background:#fff;color:var(--navy);
+    align-items:center;justify-content:center;padding:0;
+  }
+  .b-icon:hover{border-color:var(--navy);background:var(--soft)}
+  .b-icon.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .b-icon.primary:hover{background:var(--navy-d)}
+
+  /* -- Scale showcase -- */
+  .b-sm{font-size:10px;padding:9px 16px;letter-spacing:.14em}
+  .b-lg{font-size:13px;padding:16px 28px;letter-spacing:.14em}
+
+  /* -- Disabled -- */
+  .b-primary:disabled{background:#D1D5DB;color:#9CA3AF;cursor:not-allowed}
+  .b-primary:disabled::after{display:none}
+</style>
+</head><body>
+
+<div class="grid">
+
+  <div class="block">
+    <div class="lbl">Primary actions</div>
+    <div class="row">
+      <button class="btn-x b-primary">Request Consultation</button>
+      <button class="btn-x b-cta">Apply for CCP</button>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="lbl">Secondary &amp; tertiary</div>
+    <div class="row">
+      <button class="btn-x b-outline">View Programme</button>
+      <a class="btn-x b-ghost" href="#">Learn more <i data-lucide="arrow-right"></i></a>
+      <a class="btn-x b-link" href="#">Read the case study</a>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="lbl">On dark surface</div>
+    <div class="dark row">
+      <button class="btn-x b-primary-on-dark">Contact Office</button>
+      <button class="btn-x b-outline-on-dark">Download Brochure</button>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="lbl">Icon &amp; utility</div>
+    <div class="row">
+      <button class="btn-x b-icon" aria-label="Search"><i data-lucide="search"></i></button>
+      <button class="btn-x b-icon" aria-label="Download"><i data-lucide="download"></i></button>
+      <button class="btn-x b-icon primary" aria-label="Add"><i data-lucide="plus"></i></button>
+      <button class="btn-x b-outline" style="gap:6px;padding:10px 16px"><i data-lucide="download"></i>Export PDF</button>
+    </div>
+  </div>
+
+  <div class="block" style="grid-column:1/-1">
+    <div class="lbl">Scale &amp; states</div>
+    <div class="row">
+      <button class="btn-x b-primary b-sm">Small</button>
+      <button class="btn-x b-primary">Default</button>
+      <button class="btn-x b-primary b-lg">Large</button>
+      <button class="btn-x b-primary" disabled>Disabled</button>
+    </div>
+  </div>
+
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

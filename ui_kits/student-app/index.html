@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><title>CPTED India — Student Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-sans);color:#1F2937;background:#F5F5F3;display:flex;min-height:100vh;font-size:14px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+
+  /* Sidebar (light, institutional) */
+  .side{width:248px;background:#fff;border-right:1px solid #E5E7EB;display:flex;flex-direction:column;flex-shrink:0}
+  .side .brand{padding:20px 20px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #E5E7EB}
+  .side .brand .mark{width:40px;height:40px;border-radius:4px;object-fit:cover;display:block;flex-shrink:0}
+  .side .brand .word{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:15px;line-height:1.1;color:#0B2545}
+  .side .brand .tag{font-size:9px;color:#B08A3E;font-weight:600;text-transform:uppercase;letter-spacing:.14em;margin-top:3px}
+  .side .section-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#9CA3AF;padding:24px 20px 10px;font-weight:600}
+  .side nav{padding:0 12px}
+  .side nav a{display:flex;align-items:center;gap:12px;padding:9px 14px;border-radius:3px;color:#4B5563;font-size:13.5px;font-weight:500;text-decoration:none;position:relative;margin-bottom:1px}
+  .side nav a:hover{background:#F5F5F3;color:#0B2545}
+  .side nav a.active{background:#F5F5F3;color:#0B2545;font-weight:600}
+  .side nav a.active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#B08A3E}
+  .side nav a svg{width:16px;height:16px;stroke-width:1.75}
+  .side .foot{margin-top:auto;padding:16px 20px;border-top:1px solid #E5E7EB;display:flex;align-items:center;gap:12px}
+  .side .foot .avatar{width:36px;height:36px;background:#0B2545;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;font-family:"Newsreader",Georgia,serif}
+  .side .foot .name{font-size:13px;font-weight:600;color:#0B2545}
+  .side .foot .role{font-size:10px;color:#B08A3E;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:2px}
+
+  /* Main */
+  .main{flex:1;display:flex;flex-direction:column;min-width:0}
+  .top{height:64px;background:#fff;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+  .top .crumbs{font-size:12px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em}
+  .top .crumbs .sep{margin:0 10px;color:#D1D5DB}
+  .top .crumbs .cur{color:#0B2545;font-weight:600}
+  .top .actions{display:flex;align-items:center;gap:8px}
+  .top .search{position:relative}
+  .top .search input{padding:7px 12px 7px 32px;border:1px solid #E5E7EB;background:#fff;font-size:13px;width:280px;outline:none;font-family:inherit;color:#1F2937}
+  .top .search input:focus{border-color:#0B2545}
+  .top .search svg{position:absolute;top:50%;left:10px;transform:translateY(-50%);color:#9CA3AF;width:14px;height:14px}
+  .icon-btn{width:34px;height:34px;border:0;background:transparent;color:#6B7280;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
+  .icon-btn:hover{color:#0B2545}
+  .icon-btn svg{width:16px;height:16px;stroke-width:1.75}
+  .icon-btn .ping{position:absolute;top:8px;right:8px;width:6px;height:6px;border-radius:999px;background:#B08A3E}
+
+  /* Content */
+  .content{flex:1;padding:40px;overflow:auto;max-width:1280px;width:100%}
+
+  .page-head{margin-bottom:32px;display:flex;align-items:flex-end;justify-content:space-between}
+  .page-head .eyebrow{font-size:11px;color:#B08A3E;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-bottom:8px}
+  .page-head h1{font-family:"Newsreader",Georgia,serif;font-size:2rem;font-weight:500;margin:0;letter-spacing:-.01em;color:#0B2545}
+  .page-head .desc{color:#6B7280;font-size:14px;margin-top:4px}
+
+  /* Summary */
+  .summary{background:#fff;border:1px solid #E5E7EB;padding:28px 32px;margin-bottom:24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;align-items:center}
+  .summary .primary .lbl{font-size:10px;color:#B08A3E;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-bottom:10px}
+  .summary .primary h2{font-family:"Newsreader",Georgia,serif;font-size:1.5rem;font-weight:500;margin:0 0 6px 0;color:#0B2545;letter-spacing:-.005em}
+  .summary .primary p{color:#6B7280;font-size:13px;margin:0;line-height:1.5}
+  .metric{border-left:1px solid #E5E7EB;padding:4px 0 4px 24px}
+  .metric .lbl{font-size:10px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:6px}
+  .metric .num{font-family:"Newsreader",Georgia,serif;font-size:1.875rem;font-weight:500;color:#0B2545;line-height:1;letter-spacing:-.01em}
+  .metric .delta{font-size:11px;color:#16624A;margin-top:4px;font-weight:500}
+
+  /* Two col */
+  .two-col{display:grid;grid-template-columns:2.2fr 1fr;gap:24px}
+  .panel{background:#fff;border:1px solid #E5E7EB}
+  .panel-head{padding:20px 24px;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between}
+  .panel-head h3{font-family:"Newsreader",Georgia,serif;font-size:1.125rem;font-weight:600;margin:0;color:#0B2545}
+  .panel-head a{color:#0B2545;font-size:12px;font-weight:500;text-decoration:none;border-bottom:1px solid #B08A3E;padding-bottom:1px}
+
+  .course-row{display:grid;grid-template-columns:64px 1.6fr auto;gap:20px;align-items:center;padding:20px 24px;border-bottom:1px solid #F3F4F6}
+  .course-row:last-child{border:0}
+  .course-row .idx{font-family:"Newsreader",Georgia,serif;font-size:14px;color:#B08A3E;font-weight:500;letter-spacing:.05em}
+  .course-row .info .tier{font-size:10px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:4px}
+  .course-row .info h4{font-family:"Newsreader",Georgia,serif;font-size:1rem;font-weight:600;margin:0 0 4px 0;color:#0B2545}
+  .course-row .info .meta{font-size:12px;color:#6B7280}
+  .course-row .progress{width:200px}
+  .progress .pct-row{display:flex;justify-content:space-between;font-size:11px;color:#6B7280;margin-bottom:6px;font-weight:500}
+  .progress .pct-row .v{color:#0B2545;font-family:"Newsreader",Georgia,serif;font-size:14px}
+  .progress .bar{height:3px;background:#F3F4F6;overflow:hidden}
+  .progress .bar>div{height:100%;background:#B08A3E}
+
+  .event{display:flex;gap:14px;padding:16px 24px;border-bottom:1px solid #F3F4F6}
+  .event:last-child{border:0}
+  .event .date{width:44px;flex-shrink:0;text-align:center;border:1px solid #E5E7EB;padding:6px 0;background:#F5F5F3}
+  .event .date .m{font-size:9px;color:#9CA3AF;text-transform:uppercase;font-weight:600;letter-spacing:.1em}
+  .event .date .d{font-family:"Newsreader",Georgia,serif;font-size:18px;font-weight:600;color:#0B2545;line-height:1;margin-top:2px}
+  .event .body h4{font-family:"Newsreader",Georgia,serif;font-size:14px;font-weight:600;margin:0 0 3px 0;color:#0B2545}
+  .event .body p{font-size:12px;color:#6B7280;margin:0}
+
+  .anno{background:#F5F5F3;border:1px solid #E5E7EB;padding:20px 24px;margin-top:16px;display:flex;gap:14px}
+  .anno svg{color:#B08A3E;flex-shrink:0;width:18px;height:18px;margin-top:2px}
+  .anno h4{font-family:"Newsreader",Georgia,serif;font-size:14px;font-weight:600;margin:0 0 3px 0;color:#0B2545}
+  .anno p{font-size:12px;color:#6B7280;margin:0;line-height:1.55}
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <div class="brand">
+    <img class="mark" src="../../assets/logo-ci.jpg" alt="CPTED India" style="border-radius:4px;object-fit:cover">
+    <div>
+      <div class="word">CPTED India</div>
+      <div class="tag">Student Portal</div>
+    </div>
+  </div>
+
+  <div class="section-lbl">Learning</div>
+  <nav>
+    <a href="#" class="active"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+    <a href="#"><i data-lucide="book-open"></i>My Programmes</a>
+    <a href="#"><i data-lucide="compass"></i>Catalogue</a>
+    <a href="#"><i data-lucide="calendar"></i>Schedule</a>
+  </nav>
+
+  <div class="section-lbl">Credentials</div>
+  <nav>
+    <a href="#"><i data-lucide="award"></i>Certificates</a>
+    <a href="#"><i data-lucide="trending-up"></i>Transcripts</a>
+  </nav>
+
+  <div class="section-lbl">Account</div>
+  <nav>
+    <a href="#"><i data-lucide="user"></i>Profile</a>
+    <a href="#"><i data-lucide="message-square"></i>Enquiries</a>
+    <a href="#"><i data-lucide="settings"></i>Settings</a>
+  </nav>
+
+  <div class="foot">
+    <div class="avatar">RK</div>
+    <div>
+      <div class="name">Rahul Kumar</div>
+      <div class="role">Student</div>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="top">
+    <div class="crumbs">Learning <span class="sep">/</span> <span class="cur">Dashboard</span></div>
+    <div class="actions">
+      <div class="search">
+        <i data-lucide="search"></i>
+        <input placeholder="Search programmes, modules…">
+      </div>
+      <button class="icon-btn"><i data-lucide="bell"></i><span class="ping"></span></button>
+      <button class="icon-btn"><i data-lucide="help-circle"></i></button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Friday · 24 April 2026</div>
+        <h1>Good afternoon, Rahul.</h1>
+        <div class="desc">You have one assignment due this week and a live session on Monday.</div>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#">Resume learning</a>
+    </div>
+
+    <div class="summary">
+      <div class="primary">
+        <div class="lbl">In Progress</div>
+        <h2>CPTED Certified Associate</h2>
+        <p>Module 4 of 8 · Natural Surveillance & Access Control</p>
+      </div>
+      <div class="metric">
+        <div class="lbl">Progress</div>
+        <div class="num">62%</div>
+        <div class="delta">+8% this week</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Hours Logged</div>
+        <div class="num">24.5</div>
+        <div class="delta">Of 40 required</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Credential Status</div>
+        <div class="num" style="font-size:1.125rem;font-weight:600;letter-spacing:0">On Track</div>
+        <div class="delta" style="color:#9CA3AF">Expected 12 Jun 2026</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Enrolled Programmes</h3>
+          <a href="#">View all</a>
+        </div>
+        <div class="course-row">
+          <div class="idx">01</div>
+          <div class="info">
+            <div class="tier">Foundation · Associate</div>
+            <h4>CPTED Certified Associate</h4>
+            <div class="meta">Module 4 of 8 · Next lesson: Sightlines and Territorial Reinforcement</div>
+          </div>
+          <div class="progress">
+            <div class="pct-row"><span>Progress</span><span class="v">62%</span></div>
+            <div class="bar"><div style="width:62%"></div></div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="idx">02</div>
+          <div class="info">
+            <div class="tier">Intermediate · Institutional</div>
+            <h4>Risk Management for Institutions</h4>
+            <div class="meta">Module 2 of 6 · Next lesson: Sector-Specific Risk Appetite</div>
+          </div>
+          <div class="progress">
+            <div class="pct-row"><span>Progress</span><span class="v">28%</span></div>
+            <div class="bar"><div style="width:28%"></div></div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="idx">03</div>
+          <div class="info">
+            <div class="tier">Foundation · Elective</div>
+            <h4>Site Audit Fundamentals</h4>
+            <div class="meta">Module 1 of 4 · Next lesson: Preparing the Pre-Audit Checklist</div>
+          </div>
+          <div class="progress">
+            <div class="pct-row"><span>Progress</span><span class="v">8%</span></div>
+            <div class="bar"><div style="width:8%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-head"><h3>Upcoming</h3></div>
+          <div class="event">
+            <div class="date"><div class="m">Apr</div><div class="d">28</div></div>
+            <div class="body">
+              <h4>Live seminar · Natural Surveillance</h4>
+              <p>Dr. Anita Singh · 14:00 IST · 45 min</p>
+            </div>
+          </div>
+          <div class="event">
+            <div class="date"><div class="m">May</div><div class="d">02</div></div>
+            <div class="body">
+              <h4>Assignment due · Module 4</h4>
+              <p>CCA · 23:59 IST · Submission portal</p>
+            </div>
+          </div>
+          <div class="event">
+            <div class="date"><div class="m">May</div><div class="d">10</div></div>
+            <div class="body">
+              <h4>Guest lecture · Dr. Mehta</h4>
+              <p>19:00 IST · Public webinar</p>
+            </div>
+          </div>
+        </div>
+        <div class="anno">
+          <i data-lucide="info"></i>
+          <div>
+            <h4>Module 4 reading published</h4>
+            <p>Crowe, T. D. (2000). <em>Crime Prevention Through Environmental Design</em>, Ch. 5–7. Available in the reading list.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>lucide.createIcons();</script>
+</body></html>

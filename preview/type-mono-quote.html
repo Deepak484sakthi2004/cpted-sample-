@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Type — Mono & Quote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:#fff;font-family:var(--font-sans);color:#1F2937}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+
+  .specimen{display:flex;flex-direction:column;gap:10px}
+  .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#9CA3AF;font-weight:600}
+
+  /* Mono */
+  .inline-row{font-size:13.5px;color:#374151;line-height:1.65}
+  code.inline{
+    font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    background:#F5F5F3;color:#0B2545;
+    padding:2px 8px;border-radius:3px;
+    font-size:12.5px;font-weight:500;
+    border:1px solid #E5E7EB;
+  }
+  pre.block{
+    margin:0;
+    font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    background:#0B2545;color:#E5E7EB;
+    padding:14px 16px;border-radius:4px;
+    font-size:12.5px;line-height:1.6;
+    overflow:hidden;white-space:pre-wrap;
+  }
+  pre.block .c{color:#8996AC;font-style:italic}    /* comment */
+  pre.block .k{color:#C9A24F}                       /* keyword */
+  pre.block .s{color:#A5D6A7}                       /* string */
+  pre.block .f{color:#FFD180}                       /* function */
+
+  /* Quote — editorial pull quote */
+  blockquote.quote{
+    margin:0;
+    position:relative;
+    padding:14px 4px 14px 32px;
+    font-family:"Newsreader",Georgia,serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:20px;
+    line-height:1.45;
+    color:#0B2545;
+    letter-spacing:-.005em;
+    border-left:2px solid #B08A3E;
+  }
+  blockquote.quote::before{
+    content:"\201C";
+    position:absolute;
+    left:8px;top:-6px;
+    font-family:"Newsreader",Georgia,serif;
+    font-style:normal;
+    font-size:48px;
+    line-height:1;
+    color:#B08A3E;
+  }
+  blockquote.quote cite{
+    display:block;
+    margin-top:10px;
+    font-family:var(--font-sans);
+    font-style:normal;
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#6B7280;
+  }
+</style>
+</head><body>
+
+<div class="grid">
+
+  <div class="specimen">
+    <div class="lbl">Monospace · JetBrains Mono</div>
+    <p class="inline-row" style="margin:0">Reference each audit by its site code, e.g. <code class="inline">KEN-BLR-01</code>, in running prose.</p>
+    <pre class="block"><span class="c">// Site assessment — CPTED audit run</span>
+<span class="k">npm</span> run audit <span class="f">--site</span>=<span class="s">"KEN-BLR-01"</span> <span class="f">--mode</span>=<span class="s">"cpted"</span></pre>
+  </div>
+
+  <div class="specimen">
+    <div class="lbl">Pull quote · Newsreader Italic</div>
+    <blockquote class="quote">
+      We assess, advise, and certify spaces for individuals, institutions, and government bodies.
+      <cite>— CPTED India, Practice Statement</cite>
+    </blockquote>
+  </div>
+
+</div>
+</body></html>

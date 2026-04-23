@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><title>CPTED India — Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-sans);color:#1F2937;background:#fff;font-size:15px}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:72rem;margin:0 auto;padding:0 32px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+
+  /* Top utility bar */
+  .utility{background:#0B2545;color:#BCC5D3;font-size:12px;padding:8px 0}
+  .utility .container{display:flex;justify-content:space-between;align-items:center}
+  .utility a{color:inherit}.utility a:hover{color:#fff}
+  .utility .left{display:flex;gap:24px}
+  .utility .left span{display:inline-flex;align-items:center;gap:6px}
+  .utility .right{display:flex;gap:20px;align-items:center}
+
+  /* Navbar */
+  .nav{background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:50}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo-mark{width:48px;height:48px;background:#0B2545;color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Newsreader",Georgia,serif;font-size:22px;font-weight:600;letter-spacing:.02em}
+  .logo .stack{display:flex;flex-direction:column;line-height:1.1;border-left:1px solid #E5E7EB;padding-left:14px}
+  .logo .word{font-family:"Newsreader",Georgia,serif;font-size:20px;font-weight:600;color:#0B2545}
+  .logo .tag{font-size:10px;font-weight:600;color:#B08A3E;text-transform:uppercase;letter-spacing:.18em;margin-top:4px}
+  .links{display:flex;gap:36px}
+  .links a{font-size:14px;font-weight:500;color:#374151;padding:30px 0;position:relative}
+  .links a:hover{color:#0B2545}
+  .links a.active{color:#0B2545}
+  .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#B08A3E}
+
+  /* Hero */
+  .hero{position:relative;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:#0B2545}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.15;object-position:center 30%;filter:grayscale(.4)}
+  .hero-grid{position:relative;padding:96px 0 104px;max-width:48rem}
+  .hero .eyebrow{font-size:11px;font-weight:600;color:#C9A24F;text-transform:uppercase;letter-spacing:.2em;margin-bottom:20px}
+  .hero h1{font-family:"Newsreader",Georgia,serif;font-size:3.25rem;font-weight:500;line-height:1.1;margin:0 0 24px 0;letter-spacing:-.015em;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:#C9A24F;font-weight:500}
+  .hero p.lead{font-size:1.0625rem;color:#BCC5D3;line-height:1.65;max-width:36rem;margin:0 0 36px 0}
+  .hero-ctas{display:flex;gap:14px}
+  .hero-meta{display:flex;flex-direction:column;gap:16px;padding:32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-left:2px solid #C9A24F}
+  .hero-meta h3{font-family:"Newsreader",Georgia,serif;color:#fff;font-size:1.125rem;margin:0 0 8px 0;font-weight:500}
+  .hero-meta .item{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:16px;font-size:13px}
+  .hero-meta .item:last-child{border-bottom:0;padding-bottom:0}
+  .hero-meta .k{color:#8996AC}
+  .hero-meta .v{color:#fff;font-weight:500;text-align:right}
+
+  /* Credentials band */
+  .creds{background:#F5F5F3;border-top:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB;padding:24px 0}
+  .creds-row{display:flex;align-items:center;gap:48px;font-size:12px;color:#6B7280;text-transform:uppercase;letter-spacing:.12em;font-weight:600;flex-wrap:wrap;justify-content:center}
+  .creds-row .sep{width:1px;height:14px;background:#D1D5DB}
+
+  /* Sections */
+  section{padding:96px 0}
+  .section-head{margin-bottom:56px;max-width:48rem}
+  .section-head .eyebrow{font-size:11px;color:#B08A3E;font-weight:600;text-transform:uppercase;letter-spacing:.18em;margin-bottom:16px}
+  .section-head h2{font-family:"Newsreader",Georgia,serif;font-size:2.25rem;font-weight:500;letter-spacing:-.01em;line-height:1.15;margin:0 0 16px 0}
+  .section-head p{color:#4B5563;font-size:1rem;line-height:1.65;margin:0}
+
+  /* Services */
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+  .service{background:#fff;border:1px solid #E5E7EB;padding:36px;display:flex;gap:24px;transition:border-color .2s,box-shadow .2s}
+  .service:hover{border-color:#B08A3E;box-shadow:0 2px 12px -4px rgb(11 37 69 / 0.12)}
+  .service .num{font-family:"Newsreader",Georgia,serif;font-size:14px;color:#B08A3E;font-weight:500;letter-spacing:.05em;flex-shrink:0}
+  .service h3{font-family:"Newsreader",Georgia,serif;font-size:1.375rem;font-weight:600;color:#0B2545;margin:0 0 10px 0}
+  .service p{color:#4B5563;font-size:14px;line-height:1.65;margin:0 0 18px 0}
+  .service .more{font-size:13px;font-weight:500;color:#0B2545;border-bottom:1px solid #B08A3E;padding-bottom:2px}
+  .service .more:hover{color:#B08A3E}
+
+  /* Programmes (dark) */
+  .programmes{background:#0B2545;color:#fff}
+  .programmes .section-head .eyebrow{color:#C9A24F}
+  .programmes .section-head h2{color:#fff}
+  .programmes .section-head p{color:#BCC5D3}
+  .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .prog{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:32px 28px;transition:background .2s,border-color .2s}
+  .prog:hover{background:rgba(255,255,255,.07);border-color:rgba(201,162,79,.4)}
+  .prog .tier{font-size:10px;color:#C9A24F;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+  .prog h3{font-family:"Newsreader",Georgia,serif;color:#fff;font-size:1.375rem;margin:0 0 8px 0;font-weight:500}
+  .prog p{color:#BCC5D3;font-size:13px;line-height:1.65;margin:0 0 24px 0;min-height:80px}
+  .prog .meta{display:flex;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:12px}
+  .prog .dur{color:#8996AC}
+  .prog .price{color:#fff;font-family:"Newsreader",Georgia,serif;font-size:18px;font-weight:500}
+
+  /* Credentials split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .split img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.1)}
+  .split .stats{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+  .split .stat .n{font-family:"Newsreader",Georgia,serif;font-size:2.5rem;color:#0B2545;font-weight:500;line-height:1}
+  .split .stat .l{font-size:12px;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;margin-top:8px;font-weight:600}
+
+  /* CTA */
+  .cta{background:#F5F5F3;border-top:1px solid #E5E7EB}
+  .cta-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .cta h2{font-family:"Newsreader",Georgia,serif;font-size:2rem;font-weight:500;margin:0 0 8px 0;color:#0B2545;letter-spacing:-.01em}
+  .cta p{color:#4B5563;margin:0;font-size:15px}
+  .cta .ctas{display:flex;gap:12px}
+
+  /* Footer */
+  footer{background:#0B2545;color:#8996AC;padding:72px 0 28px;font-size:14px}
+  footer .grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
+  footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#C9A24F;margin:0 0 20px 0;font-weight:600}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer li{margin-bottom:10px}
+  footer a:hover{color:#fff}
+  footer .brand-block .word{font-family:"Newsreader",Georgia,serif;font-size:22px;color:#fff;font-weight:500;margin-bottom:4px}
+  footer .brand-block p{margin:12px 0 24px;line-height:1.65}
+  footer .contact-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+  footer .contact-row svg{color:#C9A24F;flex-shrink:0;margin-top:3px;width:14px;height:14px}
+  .legal{border-top:1px solid rgba(255,255,255,.08);margin-top:56px;padding-top:24px;display:flex;justify-content:space-between;color:#6B7280;font-size:12px}
+  .legal .links-l{display:flex;gap:24px}
+</style>
+</head>
+<body>
+
+<div class="utility">
+  <div class="container">
+    <div class="left">
+      <span><i data-lucide="mail" style="width:13px;height:13px;color:#C9A24F"></i> office@cptedindia.com</span>
+      <span><i data-lucide="phone" style="width:13px;height:13px;color:#C9A24F"></i> +91 98863 33979</span>
+    </div>
+    <div class="right">
+      <span>ISO 9001:2015 Certified</span>
+      <span class="sep" style="width:1px;height:12px;background:rgba(255,255,255,.15);display:inline-block"></span>
+      <a href="#">Client Portal</a>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#">
+      <img src="../../assets/logo-ci.jpg" alt="CPTED India" style="height:56px;width:auto;border-radius:6px;display:block">
+      <div class="stack"><span class="word">CPTED India</span><span class="tag">Safer Space by Design</span></div>
+    </a>
+    <nav class="links">
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Programmes</a>
+      <a href="#">Research</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#">Request Consultation</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"><img src="../../assets/banner-safe-space.jpg" alt=""></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ISO-Certified · Est. 2005</div>
+      <h1>Proactive crime prevention through <em>environmental design.</em></h1>
+      <p class="lead">CPTED India advises institutions, governments, and commercial clients on first- and second-generation CPTED strategy — from site audits and risk frameworks to professional certification.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-secondary btn-lg" href="#">Request a Consultation</a>
+        <a class="btn btn-outline-inverse btn-lg" href="#">Download Capability Statement</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="creds">
+  <div class="container">
+    <div class="creds-row">
+      <span>ISO 9001:2015</span><span class="sep"></span>
+      <span>Ministry of Home Affairs Empanelled</span><span class="sep"></span>
+      <span>ICA Accredited</span><span class="sep"></span>
+      <span>IACP Affiliated</span><span class="sep"></span>
+      <span>Karnataka State Police Advisory</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>Advisory, assessment, and certification — delivered with institutional rigour.</h2>
+      <p>Our practice covers the full CPTED engagement lifecycle, from initial threat modelling to post-implementation review. Each assignment is led by a criminologist and a certified practitioner.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="num">01</div>
+        <div>
+          <h3>CPTED Site Audits</h3>
+          <p>On-site assessment of residential, institutional, and commercial environments against first- and second-generation CPTED principles, with a written findings report.</p>
+          <a class="more" href="#">Read brief</a>
+        </div>
+      </div>
+      <div class="service">
+        <div class="num">02</div>
+        <div>
+          <h3>Risk Management</h3>
+          <p>Structured risk frameworks tailored to sector-specific threat profiles, risk appetite, and statutory obligations for institutional and government clients.</p>
+          <a class="more" href="#">Read brief</a>
+        </div>
+      </div>
+      <div class="service">
+        <div class="num">03</div>
+        <div>
+          <h3>Security Design Review</h3>
+          <p>End-to-end consulting across the built-environment lifecycle — from masterplan review to post-occupancy security audit and remediation advice.</p>
+          <a class="more" href="#">Read brief</a>
+        </div>
+      </div>
+      <div class="service">
+        <div class="num">04</div>
+        <div>
+          <h3>Expatriate Advisory</h3>
+          <p>Safety and residence advisory for expatriate households and international organisations operating across major Indian metropolitan regions.</p>
+          <a class="more" href="#">Read brief</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programmes">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Professional Certification</div>
+      <h2>Three pathways to recognised CPTED credentials.</h2>
+      <p>Programmes are cohort-based, examined, and aligned with international CPTED standards. Fees are published; scholarships are available for public-sector practitioners.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog">
+        <div class="tier">Foundation</div>
+        <h3>Certified Associate</h3>
+        <p>Entry pathway for security professionals, architects, and urban planners new to CPTED practice.</p>
+        <div class="meta"><span class="dur">8 weeks · Online</span><span class="price">₹18,000</span></div>
+      </div>
+      <div class="prog">
+        <div class="tier">Intermediate</div>
+        <h3>Certified Practitioner</h3>
+        <p>Advanced pathway for auditors and consultants executing CPTED site assessments in the field.</p>
+        <div class="meta"><span class="dur">16 weeks · Hybrid</span><span class="price">₹42,000</span></div>
+      </div>
+      <div class="prog">
+        <div class="tier">Advanced</div>
+        <h3>Senior Fellow</h3>
+        <p>Capstone credential for experienced practitioners leading public-sector or multi-site engagements.</p>
+        <div class="meta"><span class="dur">By nomination</span><span class="price">—</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <img src="../../assets/risk-assessment.jpg" alt="">
+      <div>
+        <div class="eyebrow" style="font-size:11px;color:#B08A3E;font-weight:600;text-transform:uppercase;letter-spacing:.18em;margin-bottom:16px">About the practice</div>
+        <h2 class="serif" style="font-size:2.25rem;font-weight:500;letter-spacing:-.01em;line-height:1.15;margin:0 0 24px 0">Twenty years of institutional practice in environmental security.</h2>
+        <p style="color:#4B5563;line-height:1.75;margin:0">Founded in 2005, CPTED India is the country's first practice dedicated exclusively to Crime Prevention Through Environmental Design. Our work spans residential estates, educational campuses, transport infrastructure, and critical government facilities — always grounded in peer-reviewed criminology.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">20+</div><div class="l">Years in practice</div></div>
+          <div class="stat"><div class="n">240</div><div class="l">Engagements</div></div>
+          <div class="stat"><div class="n">18</div><div class="l">Certified practitioners</div></div>
+          <div class="stat"><div class="n">7</div><div class="l">Government advisories</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <h2>Considering a CPTED engagement?</h2>
+        <p>Speak with our advisory team about a site audit, training cohort, or bespoke programme.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary btn-lg" href="#">Request Consultation</a>
+        <a class="btn btn-outline btn-lg" href="#">Download Brief</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="brand-block">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
+          <img src="../../assets/logo-ci.jpg" alt="CPTED India" style="height:44px;width:auto;border-radius:4px;display:block">
+          <div class="word">CPTED India</div>
+        </div>
+        <p>India's first practice dedicated exclusively to Crime Prevention Through Environmental Design.</p>
+        <div class="contact-row"><i data-lucide="map-pin"></i><span>3rd Floor, Safire Towers,<br>MG Road, Bengaluru 560001</span></div>
+        <div class="contact-row"><i data-lucide="mail"></i><a href="mailto:office@cptedindia.com">office@cptedindia.com</a></div>
+        <div class="contact-row"><i data-lucide="phone"></i><span>+91 98863 33979</span></div>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul><li><a href="#">About</a></li><li><a href="#">Leadership</a></li><li><a href="#">Research</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#">Site Audits</a></li><li><a href="#">Risk Management</a></li><li><a href="#">Design Review</a></li><li><a href="#">Expatriate Advisory</a></li></ul>
+      </div>
+      <div>
+        <h4>Programmes</h4>
+        <ul><li><a href="#">Certified Associate</a></li><li><a href="#">Certified Practitioner</a></li><li><a href="#">Senior Fellow</a></li><li><a href="#">Client Portal</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 CPTED India. All rights reserved.</span>
+      <div class="links-l"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body></html>
