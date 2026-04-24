@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPTED India Design System</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F5F5F3;min-height:100vh;display:flex;flex-direction:column}
+
+  /* Header */
+  .header{background:#0B2545;padding:48px 0 56px}
+  .wrap{max-width:72rem;margin:0 auto;padding:0 32px}
+  .logo{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+  .logo img{height:56px;width:auto;border-radius:4px}
+  .logo .word{font-family:var(--font-display);font-size:22px;font-weight:600;color:#fff}
+  .logo .tag{font-size:10px;color:#C9A24F;text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin-top:4px}
+  .header h1{font-family:var(--font-display);font-size:2.5rem;font-weight:500;color:#fff;line-height:1.15;letter-spacing:-.015em;margin-bottom:12px}
+  .header p{color:#8996AC;font-size:1rem;line-height:1.65;max-width:40rem}
+
+  /* Surface cards */
+  .surfaces{padding:56px 0 80px}
+  .surfaces h2{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:#0B2545;margin-bottom:8px}
+  .surfaces .sub{font-size:14px;color:#6B7280;margin-bottom:32px}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
+  .card{background:#fff;border:1px solid #E5E7EB;padding:32px 28px;transition:border-color .2s,box-shadow .2s;text-decoration:none;color:inherit;display:block}
+  .card:hover{border-color:#B08A3E;box-shadow:0 2px 12px -4px rgb(11 37 69 / .12)}
+  .card .eyebrow{font-size:10px;color:#B08A3E;text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin-bottom:14px}
+  .card h3{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:#0B2545;margin-bottom:8px}
+  .card p{font-size:13px;color:#6B7280;line-height:1.65;margin-bottom:20px}
+  .card .link{font-size:13px;font-weight:500;color:#0B2545;border-bottom:1px solid #B08A3E;padding-bottom:2px;display:inline-flex;align-items:center;gap:6px}
+  .card .link:hover{color:#B08A3E}
+
+  /* Component specimens */
+  .specimens h2{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:#0B2545;margin-bottom:8px}
+  .specimens .sub{font-size:14px;color:#6B7280;margin-bottom:24px}
+  .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .spec{background:#fff;border:1px solid #E5E7EB;padding:20px;text-decoration:none;color:inherit;display:block;transition:border-color .2s}
+  .spec:hover{border-color:#B08A3E}
+  .spec .icon{width:32px;height:32px;background:#F5F5F3;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .spec .icon svg{width:16px;height:16px;color:#B08A3E;stroke-width:1.75}
+  .spec h4{font-size:13px;font-weight:600;color:#0B2545;margin-bottom:4px}
+  .spec .desc{font-size:11px;color:#9CA3AF;line-height:1.4}
+
+  /* Footer */
+  footer{margin-top:auto;background:#0B2545;padding:28px 0;text-align:center;font-size:12px;color:#7A8599}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="wrap">
+    <div class="logo">
+      <img src="assets/logo-ci.jpg" alt="CPTED India">
+      <div>
+        <div class="word">CPTED India</div>
+        <div class="tag">Design System</div>
+      </div>
+    </div>
+    <h1>Design System</h1>
+    <p>Institutional palette, editorial typography, and square geometry. Three product surfaces — marketing site, student portal, and administrative console — built on a shared token system.</p>
+  </div>
+</div>
+
+<div class="surfaces">
+  <div class="wrap">
+    <h2>Product Surfaces</h2>
+    <div class="sub">Full-page reference implementations for each product surface.</div>
+    <div class="card-grid">
+      <a class="card" href="ui_kits/public/index.html">
+        <div class="eyebrow">Marketing</div>
+        <h3>Public Website</h3>
+        <p>Hero section, credentials band, services grid, programme cards, split about section, CTA band, and full footer.</p>
+        <span class="link">View implementation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></span>
+      </a>
+      <a class="card" href="ui_kits/student-app/index.html">
+        <div class="eyebrow">Application</div>
+        <h3>Student Portal</h3>
+        <p>Light sidebar, dashboard greeting, summary panel, enrolled programmes with progress bars, upcoming events, and annotation box.</p>
+        <span class="link">View implementation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></span>
+      </a>
+      <a class="card" href="ui_kits/admin/index.html">
+        <div class="eyebrow">Internal</div>
+        <h3>Admin Console</h3>
+        <p>Dark navy sidebar, KPI tiles with serif numerals, enrolment table with monogram avatars, activity log with timestamps.</p>
+        <span class="link">View implementation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></span>
+      </a>
+    </div>
+
+    <div class="specimens">
+      <h2>Component Specimens</h2>
+      <div class="sub">Individual component and token documentation.</div>
+      <div class="spec-grid">
+        <a class="spec" href="preview/buttons.html">
+          <div class="icon"><i data-lucide="mouse-pointer-click"></i></div>
+          <h4>Buttons</h4>
+          <div class="desc">Primary, secondary, outline, ghost, icon, on-dark</div>
+        </a>
+        <a class="spec" href="preview/cards.html">
+          <div class="icon"><i data-lucide="square"></i></div>
+          <h4>Cards</h4>
+          <div class="desc">White institutional, navy executive</div>
+        </a>
+        <a class="spec" href="preview/badges.html">
+          <div class="icon"><i data-lucide="tag"></i></div>
+          <h4>Badges</h4>
+          <div class="desc">Enrolment, role, and level variants</div>
+        </a>
+        <a class="spec" href="preview/inputs.html">
+          <div class="icon"><i data-lucide="text-cursor-input"></i></div>
+          <h4>Inputs</h4>
+          <div class="desc">Text, search, select, textarea, toggle</div>
+        </a>
+        <a class="spec" href="preview/colors-brand.html">
+          <div class="icon"><i data-lucide="palette"></i></div>
+          <h4>Brand Colours</h4>
+          <div class="desc">Navy, gold, and dark surface palette</div>
+        </a>
+        <a class="spec" href="preview/colors-neutrals.html">
+          <div class="icon"><i data-lucide="circle-half"></i></div>
+          <h4>Neutrals</h4>
+          <div class="desc">Tailwind gray 50 through 900</div>
+        </a>
+        <a class="spec" href="preview/colors-semantic.html">
+          <div class="icon"><i data-lucide="shield-check"></i></div>
+          <h4>Semantic Colours</h4>
+          <div class="desc">Success, danger, information states</div>
+        </a>
+        <a class="spec" href="preview/type-scale.html">
+          <div class="icon"><i data-lucide="type"></i></div>
+          <h4>Type Scale</h4>
+          <div class="desc">Display, H1 through body, eyebrow</div>
+        </a>
+        <a class="spec" href="preview/type-mono-quote.html">
+          <div class="icon"><i data-lucide="quote"></i></div>
+          <h4>Mono & Quotes</h4>
+          <div class="desc">JetBrains Mono, pull quotes</div>
+        </a>
+        <a class="spec" href="preview/iconography.html">
+          <div class="icon"><i data-lucide="eye"></i></div>
+          <h4>Iconography</h4>
+          <div class="desc">Lucide icon set at 1.75 stroke</div>
+        </a>
+        <a class="spec" href="preview/nav-states.html">
+          <div class="icon"><i data-lucide="panel-left"></i></div>
+          <h4>Navigation</h4>
+          <div class="desc">Light and dark sidebar states</div>
+        </a>
+        <a class="spec" href="preview/imagery.html">
+          <div class="icon"><i data-lucide="image"></i></div>
+          <h4>Imagery</h4>
+          <div class="desc">Hero overlays, split photography</div>
+        </a>
+        <a class="spec" href="preview/spacing.html">
+          <div class="icon"><i data-lucide="ruler"></i></div>
+          <h4>Spacing</h4>
+          <div class="desc">8px base scale tokens</div>
+        </a>
+        <a class="spec" href="preview/radii.html">
+          <div class="icon"><i data-lucide="box"></i></div>
+          <h4>Radii</h4>
+          <div class="desc">2px through 12px corner scale</div>
+        </a>
+        <a class="spec" href="preview/shadows.html">
+          <div class="icon"><i data-lucide="layers"></i></div>
+          <h4>Shadows</h4>
+          <div class="desc">None, sm, md, lg elevation</div>
+        </a>
+        <a class="spec" href="preview/logo.html">
+          <div class="icon"><i data-lucide="award"></i></div>
+          <h4>Logo</h4>
+          <div class="desc">On white, on navy, monogram</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">&copy; 2026 CPTED India. Design System.</div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body></html>
