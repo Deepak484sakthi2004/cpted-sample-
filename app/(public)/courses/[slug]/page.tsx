@@ -43,9 +43,6 @@ export default async function CourseDetailPage({ params }: Props) {
         <div className="mx-auto max-w-5xl px-4 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Badge className={`mb-4 ${getLevelColor(course.level)}`}>
-                {course.level.charAt(0) + course.level.slice(1).toLowerCase()}
-              </Badge>
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{course.title}</h1>
               <p className="text-gray-300 mb-6">{course.shortDescription}</p>
               <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">

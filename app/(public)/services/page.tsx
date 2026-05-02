@@ -87,11 +87,11 @@ export default function ServicesPage() {
       {/* Page Header */}
       <PageBanner
         src="/images/iStock-3.jpg"
-        overlayClass="bg-black/35"
-        className="py-12 md:py-16 px-4 text-center"
+        overlayClass="bg-black/45"
+        className="py-24 md:py-36 px-4 text-center"
       >
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-4 text-white">
             Our <span className="text-amber-400">Services</span>
           </h1>
           <p className="text-white/80 text-base md:text-lg">
@@ -127,8 +127,8 @@ export default function ServicesPage() {
       <div id="cpted" className="scroll-mt-36">
         <PageBanner
           src="/images/consulting-workspace.jpg"
-          overlayClass="bg-black/30"
-          className="py-10 md:py-16 px-4"
+          overlayClass="bg-black/50"
+          className="min-h-screen flex flex-col justify-center py-10 md:py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
@@ -139,10 +139,10 @@ export default function ServicesPage() {
                 Consulting
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">CPTED</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">CPTED</h2>
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-12">
-              <div className="space-y-4 text-gray-200 text-sm md:text-base">
+              <div className="space-y-4 text-gray-100 text-base md:text-lg">
                 <p>
                   Technologies can be defeated and sometimes the effects are recorded at a larger scale.
                   Traditional security measures are expensive and some are obsolete in recent times.
@@ -220,8 +220,7 @@ export default function ServicesPage() {
       <div id="risk" className="scroll-mt-36">
         <PageBanner
           src="/images/risk-assessment-hero.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/80 to-gray-900/20"
-          imageClass="object-[center_25%]"
+          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-900/40"
           className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
@@ -233,8 +232,8 @@ export default function ServicesPage() {
                 Consulting
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Risk Management</h2>
-            <div className="max-w-2xl space-y-4 text-sm md:text-base text-gray-200">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">Risk Management</h2>
+            <div className="max-w-2xl space-y-4 text-base md:text-lg text-gray-100">
               <p>
                 CPTEDINDIA will progress with a structured way of managing possible activities that could cause
                 harm. Every sector is unique with their credentials and risk appetite — and so are the challenges.
@@ -257,8 +256,7 @@ export default function ServicesPage() {
       <div id="security" className="scroll-mt-36">
         <PageBanner
           src="/images/security_mgmt.jpg"
-          overlayClass="bg-gradient-to-r from-gray-900/75 to-gray-900/15"
-          imageClass="object-[center_25%]"
+          overlayClass="bg-gradient-to-r from-gray-900/85 to-gray-900/50"
           className="py-10 md:py-16 px-4 min-h-screen flex flex-col justify-center"
         >
           <div className="mx-auto max-w-6xl">
@@ -270,8 +268,8 @@ export default function ServicesPage() {
                 Consulting
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Security Projects</h2>
-            <div className="max-w-2xl space-y-4 text-sm md:text-base text-gray-200">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">Security Projects</h2>
+            <div className="max-w-2xl space-y-4 text-base md:text-lg text-gray-100">
               <p>
                 CPTEDINDIA provides end-to-end advisory for security projects — from initial planning and
                 design through to implementation and review. We work with organisations to ensure security
@@ -293,13 +291,13 @@ export default function ServicesPage() {
           src="/images/expatriate-travel.jpg"
           alt="Expatriate Services"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
 
         <div className="relative min-h-screen flex flex-col px-4 py-10 md:py-12">
-          <div className="mx-auto max-w-7xl w-full flex flex-col flex-1">
+          <div className="mx-auto max-w-7xl w-full flex flex-col min-h-[calc(100vh-5rem)]">
 
             {/* Section header */}
             <div className="flex items-center gap-3 mb-2">
@@ -310,11 +308,12 @@ export default function ServicesPage() {
                 Consulting
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">Expatriate Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">Expatriate Services</h2>
 
             {/* Services box — full width on mobile, right-anchored on desktop */}
-            <div className="flex justify-center md:justify-end flex-1 items-center">
+            <div className="flex justify-center md:justify-end flex-1 items-center py-6">
               <div className="bg-blue-900 rounded-lg shadow-2xl p-5 md:p-8 w-full max-w-sm md:w-80">
+                <h3 className="text-white font-bold text-base md:text-lg mb-3 border-b border-white/20 pb-3">Our Services</h3>
                 <ul className="space-y-0">
                   {expatriateServices.map((service) => (
                     <li
@@ -328,16 +327,13 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Bottom caption + CTA */}
-            <div className="mt-auto pt-8 md:pt-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-              <p className="text-xs md:text-sm text-white/90 max-w-md drop-shadow">
+            {/* Bottom caption + CTA — always visible */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 pt-6 pb-2">
+              <p className="text-sm md:text-base text-white max-w-md drop-shadow font-medium">
                 CPTEDINDIA coordinates with Corporates and Individuals to provide a safer environment
-                for the Expat community.{" "}
-                <Link href="/contact" className="text-amber-400 hover:underline font-semibold">
-                  Read More
-                </Link>
+                for the Expat community.
               </p>
-              <Link href="/contact" className="w-full sm:w-auto">
+              <Link href="/contact" className="w-full sm:w-auto flex-shrink-0">
                 <Button className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-md w-full sm:w-auto">
                   Contact Us
                 </Button>
@@ -352,8 +348,8 @@ export default function ServicesPage() {
       <div id="training" className="scroll-mt-36">
         <PageBanner
           src="/images/certification-hero.jpg"
-          overlayClass="bg-black/30"
-          className="py-10 md:py-16 px-4"
+          overlayClass="bg-black/55"
+          className="min-h-screen flex flex-col justify-center py-10 md:py-16 px-4"
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-3 mb-2">
@@ -364,10 +360,10 @@ export default function ServicesPage() {
                 Training
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">CPTED Certification Training</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">CPTED Certification Training</h2>
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-12">
-              <div className="space-y-4 text-sm md:text-base text-gray-200">
+              <div className="space-y-4 text-base md:text-lg text-gray-100">
                 <p>
                   Professional certifications are a medium to convey expertise and industry knowledge that would
                   boost business and attract customers in the respective domain. Industry-relevant certifications

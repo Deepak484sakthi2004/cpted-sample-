@@ -14,9 +14,9 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Banner */}
-      <div className="bg-gray-900/95 py-20 px-4">
+      <div className="bg-gray-900/95 py-28 md:py-36 px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             About <span className="text-amber-400">CPTEDINDIA</span>
           </h1>
           <p className="text-xl text-white/80">
@@ -29,12 +29,12 @@ export default function AboutPage() {
       {/* Mission — Type 3: frosted glass card over full-bleed image */}
       <PageBanner
           src="/images/team-collaboration.jpg"
-        overlayClass="bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"
-        className="py-16 md:py-24 px-4"
+        overlayClass="bg-gradient-to-r from-gray-900/92 via-gray-900/60 to-transparent"
+        className="min-h-[70vh] flex items-center py-16 md:py-24 px-4"
       >
-        <div className="mx-auto max-w-7xl">
-          <div className="md:max-w-[45%]">
-            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10">
+        <div className="mx-auto max-w-7xl w-full">
+          <div className="md:max-w-[35%]">
+            <div className="bg-blue-950/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Our Mission
               </h2>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             ].map(({ icon: Icon, label, desc }) => (
               <div
                 key={label}
-                className="bg-blue-800/50 rounded-xl border border-white/20 p-5 text-center hover:shadow-md transition-shadow"
+                className="bg-blue-900 rounded-xl border border-white/20 p-5 text-center hover:shadow-md transition-shadow"
               >
                 <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-amber-500/20">
                   <Icon className="h-5 w-5 text-amber-400" />

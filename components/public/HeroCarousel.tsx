@@ -40,6 +40,18 @@ const slides = [
       { label: "Get Started Free", href: "/auth/signup", variant: "outline" },
     ],
   },
+  {
+    image: "/images/iStock-5.jpg",
+    heading: "Measure Your",
+    headingHighlight: "Return on Investment",
+    description: "CPTED delivers measurable value — reduced crime rates, lower insurance costs, and increased property values. Secure your space and your bottom line.",
+    overlay: "bg-gradient-to-b from-black/60 via-black/40 to-black/70",
+    split: true,
+    cta: [
+      { label: "Learn More", href: "/services#training", variant: "primary" },
+      { label: "Free Consultation", href: "/contact", variant: "outline" },
+    ],
+  },
 ];
 
 const DRAG_THRESHOLD = 50;
@@ -112,7 +124,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-[85vh] flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
+      className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-screen flex flex-col justify-center px-4 py-16 select-none cursor-grab active:cursor-grabbing"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

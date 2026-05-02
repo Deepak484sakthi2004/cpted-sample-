@@ -47,10 +47,10 @@ export default function CoursesPage() {
       {/* Header */}
       <PageBanner
         src="/images/certification-hero.jpg"
-        className="py-12 px-4"
+        className="py-20 md:py-32 px-4"
       >
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white">
             Explore Our <span className="text-amber-400">Courses</span>
           </h1>
           <p className="text-white/80">Find the perfect CPTED certification to advance your career.</p>

@@ -52,11 +52,11 @@ export default async function HomePage() {
       {/* Scroll 2 — What is CPTED / Why CPTEDINDIA */}
       <section className="py-16 px-4 bg-white">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
               Why Choose CPTEDINDIA?
             </h2>
-            <div className="text-gray-500 max-w-3xl mx-auto space-y-4">
+            <div className="text-gray-500 max-w-3xl mx-auto space-y-3 text-left">
               <p>
                 CPTEDINDIA provides top-tier services, fostering a crime-free society through expertise and community engagement. Our initiatives enhance quality of life and potentially increasing property values while reducing possible crime and insurance costs.
               </p>
@@ -87,7 +87,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between mb-10">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Services</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Our Services</h2>
               <p className="text-gray-500">
                 From CPTED audits to risk management — we cover every dimension of safety.
               </p>
@@ -147,7 +147,7 @@ export default async function HomePage() {
           <div className="mx-auto max-w-7xl">
             <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
                   CPTED Training Courses
                 </h2>
                 <p className="text-gray-500">
